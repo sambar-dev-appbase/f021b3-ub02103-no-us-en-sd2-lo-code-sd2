@@ -1,0 +1,26 @@
+[
+   {
+      "name": "Author",
+      "value": "Author",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Raj Marni",
+      "value": "Raj Marni",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Paul Manning",
+      "value": "Paul Manning",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Don Sticks",
+      "value": "Don Sticks",
+      "state": false,
+      "class": "has-default checkbox"
+   }
+]

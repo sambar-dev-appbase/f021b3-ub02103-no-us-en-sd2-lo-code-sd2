@@ -1,0 +1,33 @@
+[
+   {
+      "name": "Active",
+      "value": "active",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Coming Soon",
+      "value": "coming-soon",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Expired",
+      "value": "expired",
+      "state": false,
+      "class": "has-default checkbox"
+   }, 
+   {
+      "name": "Group",
+      "value": "group-trade",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Recommended",
+      "value": "true",
+      "disabled": "true",
+      "state": false,
+      "class": "has-default checkbox"
+   }
+]

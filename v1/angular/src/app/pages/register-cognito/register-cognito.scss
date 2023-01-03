@@ -1,0 +1,316 @@
+@import '../../theme/sass/auth';
+.td-logo {
+    /*background-color: #f2f2f2;*/
+    padding: 12px;
+    text-align: center;
+    margin-bottom: 5px;
+    border-radius: 100px;
+    vertical-align: middle;
+}
+.one_acc_user{
+  font-size:14px;
+}
+
+span#uploadFileTAXID {
+    margin-left: 15px;
+}
+
+span#uploadFileID {
+    margin-left: 15px;
+}
+
+.auth-main{
+    background: url('./assets/img/login-background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    height: auto !important;
+    padding: 40px 0px;
+}
+[type="checkbox"], [type="radio"] {
+    width: 16px;
+    height: 16px;
+}
+.view_claim_profile{
+  
+}
+.alert{
+  margin-top:10px;
+}
+.auth-block .register_heading{
+  margin-left:110px;
+}
+.auth-block {
+
+    background: rgba(0, 0, 0, 1) !important;
+    opacity:1;
+} 
+.auth-block h1{
+  position: relative;
+}
+.register-block{
+  width:725px !important; 
+  height: auto;
+}
+
+select.form-control{
+    height: 2.3rem !important;
+}
+.agreebox{
+  font-size: 14px;
+  line-height: 22px;
+}
+.agreebox1{
+  font-size: 14px;
+  line-height: 22px;
+}
+.agreebox2{
+  font-size: 14px;
+  line-height: 22px;
+}
+.agreebox3{
+  font-size: 14px;
+  line-height: 22px;
+}
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(./assets/img/loader.gif) 50% 50% no-repeat rgba(249, 249, 249, 0.5)
+}
+#password_tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.select_plans .form-control {
+    padding-top: 5px;
+}
+#password_tooltip .tooltiptext {
+    visibility: hidden;
+    width: 340px;
+    background-color: white;
+    /* opacity: 0.8; */
+    color: #000;
+    text-align: center;
+    border-radius: 4px;
+    padding: 4px;
+    /* margin-top: -47px; */
+    margin-left: 0;
+    position: absolute;
+    z-index: 1;
+    height: auto;
+    left: 100%;
+    font-size: 13px !important;
+}
+
+#password_tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.agree_input input {
+        position: relative;
+    top: 3px;
+    margin-right: 11px;
+    
+    float: left;
+}
+.register_heading{
+  font-size: 24px;
+  margin-bottom: 35px;
+}
+.col-sm-9.phone_space button.dropbtn.btn {
+    transform: none !important;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 0px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+#uploadFile {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    opacity: 1 !important;
+    margin-left: 12px;
+    position: relative;
+    top: 2px;
+}
+.fileUpload.btn.btn-primary {
+    background: #fff;
+    border-color: #fff;
+    color: #333;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 6px 14px;
+}
+.fileUpload.btn.btn-primary:hover{
+  transform: scale(1.1) !important;
+}
+.phone_space .input-group {
+    margin-bottom: 0px !important;
+}
+.form-group.row.location_row {
+    margin-top: -12px;
+    margin-bottom: 9px;
+    position: relative;
+    top: -3px;
+}
+a.view_plans_price {
+    margin-top: 11px;
+    display: inline-block;
+}
+a.release_text {
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    top: 9px;
+}
+
+.analyst_register_plans select.form-control.kk option[value="basic"] [disabled] {
+    background: #fff !important;
+}
+
+
+
+/*responsive css start here*/
+
+
+
+@media (min-width: 992px) and (max-width: 1199px){
+#password_tooltip .tooltiptext{
+  right: auto;
+  width: auto;
+  left: 15px;
+  top: 30px;
+  font-size: 10px !important;
+}
+
+
+
+
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+.auth-main{
+    height: auto !important;
+    padding: 0;
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow-x: hidden;
+    background: none;
+}
+.auth-main .register-block {
+    width: 100% !important;
+    /*height: 100vh;*/
+}
+#password_tooltip .tooltiptext{
+  right: auto;
+  width: auto;
+  left: 15px;
+  top: 30px;
+  font-size: 10px !important;
+}
+
+
+
+
+}
+
+
+@media (max-width: 767px){
+
+.auth-main{
+    height: auto !important;
+    padding: 0;
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow-x: hidden;
+    background: none;
+}
+.auth-main .register-block {
+    width: 100% !important;
+}
+.agree_input input {
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+}
+#password_tooltip .tooltiptext{
+  right: auto;
+  width: auto;
+  left: 15px;
+  top: 30px;
+  font-size: 10px !important;
+}
+a.release_text {
+    font-size: 14px;
+    position: relative;
+    right: 0;
+    top: 12px;
+    display: block;
+}
+span.agree_text {
+    float: left;
+    width: 90%;
+}
+
+
+}
+
+
+@media (max-width: 480px){
+#password_tooltip{
+  width: 100%;
+}
+.form-control{
+  font-size: 11px;
+}
+.captcha_down {
+    overflow: hidden;
+    width: 95%;
+}
+#password_tooltip .tooltiptext{
+  width: 100% !important;
+}
+
+}
+
+
+@media (max-width: 320px){
+.td-logo img {
+   width: 100%;
+}
+iframe {
+    transform: scale(0.85) !important;
+    margin-left: -23px !important;
+}
+.captcha_down {
+    overflow: hidden;
+}
+
+}
+
+
+.input-required {
+  border-color: #a94442 !important;
+}
+div.input-required {
+    border: 1px solid;
+}

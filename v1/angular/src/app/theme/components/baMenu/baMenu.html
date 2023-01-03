@@ -1,0 +1,17 @@
+<aside class="al-sidebar" (mouseleave)="hoverElemTop=outOfArea" sidebarResize>
+  <ul id="al-sidebar-list" class="al-sidebar-list" baSlimScroll [baSlimScrollOptions]="{height: menuHeight}">
+    <ba-menu-item
+      [menuItem]="item"
+      (itemHover)="hoverItem($event)"
+      (toggleSubMenu)="toggleSubMenu($event)"
+      *ngFor="let item of menuItems"></ba-menu-item>
+      <a class="sb_left_menu" *ngIf="!checkauthormenu" routerLink="/user/strategies-list"><button id="sbboard_menu" class="sbboard_menu">SB</button></a>
+  </ul>
+  <div class="sidebar-hover-elem" [ngStyle]="{top: hoverElemTop + 'px', height: hoverElemHeight + 'px'}"
+       [ngClass]="{'show-hover-elem': showHoverElem }"></div>
+
+  <div class="showHide-sidebar" (click)="toggleMenu()">
+  	<span *ngIf="isMenuCollapsed" class="ion-arrow-right-c"></span>
+  	<span *ngIf="!isMenuCollapsed" class="ion-arrow-left-c"></span>
+  </div>
+</aside>

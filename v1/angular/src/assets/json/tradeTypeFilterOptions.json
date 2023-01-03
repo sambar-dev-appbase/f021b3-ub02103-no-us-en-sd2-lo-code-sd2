@@ -1,0 +1,14 @@
+[
+   {
+      "name": "Outright",
+      "value": "Outright",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Spread",
+      "value": "Spread",
+      "state": false,
+      "class": "has-default checkbox"
+   }
+]

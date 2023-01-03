@@ -1,0 +1,59 @@
+[   
+   
+   {  "name": "Kiplinger",
+      "value": "kl",
+      "state": false,
+      "class": "has-default checkbox"
+   },   
+   {  "name": "Market Watch",
+      "value": "mw",
+      "state": false,
+      "class": "has-default checkbox"
+   },   
+   {  "name": "Moore Research",
+      "value": "mrci",
+      "state": false,
+      "class": "has-default checkbox"
+   }, 
+   {  "name": "Motley Fool",
+      "value": "tmf",
+      "state": false,
+      "class": "has-default checkbox"
+   },  
+   {  "name": "Nasdaq",
+      "value": "ndq",
+      "state": false,
+      "class": "has-default checkbox"
+   }, 
+   {  "name": "New York Stock Exchange",
+      "value": "nyse",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {  "name": "SAMBAR",
+      "value": "tdog",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {  "name": "Seeking Alpha",
+      "value": "alpha",
+      "state": false,
+      "class": "has-default checkbox"
+   }, 
+   {  "name":  "SumZero",
+      "value": "sum",
+      "state": false,
+      "class": "has-default checkbox"
+   },   
+   
+   {  "name": "US News",
+      "value": "usn",
+      "state": false,
+      "class": "has-default checkbox"
+   },   
+   {  "name": "Wall Street Journal",
+      "value": "wsj",
+      "state": false,
+      "class": "has-default checkbox"
+   }
+]

@@ -1,0 +1,28 @@
+[
+   {
+      "name": "Futures",
+      "value": "Futures",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Equities",
+      "value": "Equities",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Options",
+      "value": "Option",
+      "disabled": "true",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Forex",
+      "value": "Forex",
+      "disabled": "true",
+      "state": false,
+      "class": "has-default checkbox"
+   }
+]

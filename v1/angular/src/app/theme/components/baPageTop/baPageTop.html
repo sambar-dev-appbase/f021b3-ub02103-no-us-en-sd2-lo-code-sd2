@@ -1,0 +1,1221 @@
+<div class="page-top clearfix" baScrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)"
+     [ngClass]="{scrolled: isScrolled}">
+  
+ <!--  <a href (click)="toggleMenu()" class="collapse-menu-link ion-navicon"></a> -->
+
+  <a href="/" class="al-logo clearfix">
+  <!-- <span>Tradedog</span> -->
+  <img src="./assets/img/sambar.PNG" style="height: 41px;margin-top:20px;">
+  </a>
+<nav id="primary_nav_wrap">
+<ul class="parent-ul">
+  <li><a  href="javascript:void(0);">Home <b class="fa fa-angle-down"></b></a>
+    <ul class="sub_menu_things">
+      <li class="main-upper-menu"><a  href="/html/v1/home.html">HOME</a></li>
+      <li><a  href="/html/v1/company.html">Our Company</a></li>
+      <li><a  href="/html/v1/about-us.html">About Us</a></li>
+      <li><a  href="/html/v1/our-team.html">Our Team</a></li>
+      <li><a  href="/html/v1/platform-features.html">Platform Features</a></li>
+      <li><a  href="/html/v1/careers.html">Careers</a></li>
+      <li><a  href="/html/v1/platform-technology.html">Platform Technology </a></li>
+      <li ><a  href="/html/v1/intellectual-property.html">Intellectual Property</a>
+      <li><a  href="/html/v1/roadmap.html">Roadmap</a></li>
+      <li><a  href="/html/v1/press-release.html">Press Release</a></li>
+      <li><a href="javascript:void(0);" (click)="sitefeedback()">Site Feedback</a></li>
+      <li><a  href="/html/v1/contact-us.html">Contact Us</a></li>
+      <li><a  href="/html/v1/resources/submit-ticket.html">Support</a></li>
+      <li><a href="/html/v1/beta-user-signup.html">Beta User Sign Up</a></li>
+      <!-- <li class="menu_btns "><a class="parent_board_button_futures" href="javascript:void(0);" (click)="visualfeeback()">VISUAL FEEDBACK VIDEO</a></li> -->
+      <!-- <button class="btn_menu_button" (click)="openChildModalHomeVideo()">HOME 1-MINUTE DEMO</button> -->
+    </ul>
+  </li> 
+  <li>
+     <a target="_blank" href="/html/v1/vchannel/">VChannel <b class="fa fa-angle-down"></b></a> 
+     <ul class="sub_menu_things">
+        <li><a target="_blank" href="/html/v1/vchannel/sambar.html">SAMBAR</a></li>
+        <li><a target="_blank" href="/html/v1/vchannel/mrci.html">MRCI</a></li>
+        <li><a target="_blank" href="/html/v1/vchannel/cgarner.html">CARLEY GARNER</a></li>
+        <li><a target="_blank" href="/html/v1/vchannel/cmegroup.html">CME GROUP</a></li>
+     </ul>
+  </li>
+
+  <li><a  href="javascript:void(0);" >Futures <b class="fa fa-angle-down"></b></a>
+        <ul class="sub_menu_things futures_menu_ul" style="width:245px !important;">
+          <li class="main-upper-menu"><a routerLink="/opportunities/" [queryParams]="{cid:'14'}">FUTURES</a></li>
+          <li>
+            <a routerLink="/opportunities/" [queryParams]="{cid:'14'}">Futures Articles</a>
+          </li>
+          <li><a  href="/html/v1/futures/interest-rate.html">Interest Rates <b class="fa fa-angle-down down_arrow_right"></b></a>
+             <ul>
+              <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'140'}">Interest Rates Articles</a></li>
+              <li><a  href="/html/v1/futures/interest-rate/2-year.html">2-Year T-Note <b class="fa fa-angle-down down_arrow_right"></b></a>
+              <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'141'}">2-Year T-Note Articles</a></li>
+                <li><a routerLink="/user/strategies-list" [queryParams]="{commodity:'2-year-t-note'}">2-Year T-Note Board</a></li>
+              </ul>
+              </li>
+              <li><a  href="/html/v1/futures/interest-rate/5-year.html">5-Year T-Note <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'142'}">5-Year T-Note Articles</a></li>
+                <li><a routerLink="/user/strategies-list" [queryParams]="{commodity:'5-year-t-note'}">5-Year T-Note Board</a></li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/interest-rate/10-year.html">10-Year T-Note <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'143'}">10-Year T-Note Articles</a></li>
+                <li><a routerLink="/user/strategies-list" [queryParams]="{commodity:'10-year-t-note'}">10-Year T-Note Board</a></li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/interest-rate/30-year.html">30-Year T-Bond <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'144'}">30-Year T-Bond Articles</a></li>
+                <li><a routerLink="/user/strategies-list" [queryParams]="{commodity:'30-year-t-bond'}">30-Year T-Bond Board</a></li>
+              </ul></li>
+              <a routerLink="/user/strategies-list" [queryParams]="{sector:'interest-rates'}" class="btn_menu_button_parent"><button class="btn_menu_button_board">IR Board</button></a>
+             </ul> 
+          </li>
+          <li><a  href="/html/v1/futures/grains.html">Grains <b class="fa fa-angle-down down_arrow_right"></b></a>
+            <ul>
+              <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'129'}">Grains Articles</a></li>
+              <li>
+                <a  href="/html/v1/futures/grains/chicago-wheat.html">Chicago Wheat <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                  <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'130'}">Chicago Wheat Articles</a></li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'chicago-wheat'}">Chicago Wheat Board</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a  href="/html/v1/futures/grains/cocoa.html">Cocoa <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                  <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'132'}">Cocoa Articles</a></li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'cocoa'}">Cocoa Board</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a  href="/html/v1/futures/grains/coffee.html">Coffee <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'133'}">Coffee Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'coffee'}">Coffee Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/grains/corn.html">Corn <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'131'}">Corn Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'corn'}">Corn Board</a>
+                </li>
+              </ul></li>
+              <li ><a  href="/html/v1/futures/grains/kansas-city-wheat.html">Kansas City Wheat <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'134'}">KC Wheat Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'kansas-city-wheat'}">KC Wheat Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/grains/oats.html">Oats <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'135'}">Oats Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'oats'}">Oats Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/grains/rough-rice.html">Rough Rice <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'136'}">Rough Rice Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'rough-rice'}">Rough Rice Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/grains/soybean.html">Soybean <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'137'}">Soybean Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'soybean'}">Soybean Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/grains/soybean-meal.html">Soybean Meal <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'138'}">Soybean Meal Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'soybean-meal'}">Soybean Meal Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/grains/soybean-oil.html">Soybean Oil <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'139'}">Soybean Oil Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'soybean-oil'}">Soybean Oil Board</a>
+                </li>
+              </ul></li>
+              <a routerLink="/user/strategies-list" [queryParams]="{sector:'grains'}" class="btn_menu_button_parent" href="#"><button class="btn_menu_button_board">Grains Board</button></a>
+            </ul>
+          </li>
+          <li><a  href="/html/v1/futures/metals.html">Metals <b class="fa fa-angle-down down_arrow_right"></b></a>
+            <ul>
+              <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'145'}">Metals Articles</a></li>
+              <li><a  href="/html/v1/futures/metals/copper.html">Copper <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'146'}">Copper Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'copper'}">Copper Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/metals/gold.html">Gold <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'148'}">Gold Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'gold'}">Gold Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/metals/platinum.html">Platinum <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'149'}">Platinum Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'platinum'}">Platinum Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/metals/silver.html">Silver <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'147'}">Silver Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'silver'}">Silver Board</a>
+                </li>
+              </ul></li>
+              <a routerLink="/user/strategies-list" [queryParams]="{sector:'metals'}" class="btn_menu_button_parent" href="#"><button class="btn_menu_button_board">Metals Board</button></a>
+            </ul>
+          </li>
+          <li><a  href="/html/v1/futures/meats.html">Meats <b class="fa fa-angle-down down_arrow_right"></b></a>
+           <ul>
+            <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'150'}">Meats Articles</a></li>
+              <li><a  href="/html/v1/futures/meats/feeder-cattle.html">Feeder Cattle <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'151'}">Feeder Cattle Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'feeder-cattle'}">Feeder Cattle Board</a>
+                </li>
+              </ul></li>
+             <li><a  href="/html/v1/futures/meats/lean-hog.html">Lean Hog <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'152'}">Lean Hog Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'lean-hog'}">Lean Hog Board</a>
+                </li>
+              </ul></li>
+             <li><a  href="/html/v1/futures/meats/live-cattle.html">Live Cattle <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'153'}">Live Cattle Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'live-cattle'}">Live Cattle Board</a>
+                </li>
+              </ul></li>
+              <a routerLink="/user/strategies-list" [queryParams]="{sector:'meats'}" class="btn_menu_button_parent" href="#"><button class="btn_menu_button_board">Meats Board</button></a>
+            </ul>
+          </li>
+          <li><a  href="/html/v1/futures/energies.html">Energies <b class="fa fa-angle-down down_arrow_right"></b></a>
+           <ul>
+            <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'154'}">Energies Articles</a></li>
+              <li><a  href="/html/v1/futures/energies/crude-oil.html">Crude Oil <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'155'}">Crude Oil Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'crude-oil'}" href="/html/v1/user/opportunities">Crude Oil Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/energies/gasoline.html">Gasoline <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'156'}">Gasoline Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'gasoline'}">Gasoline Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/energies/natural-gas.html">Natural Gas <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'157'}">Natural Gas Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'natural-gas'}">Natural Gas Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/energies/heating-oil.html">Heating Oil <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'187'}">Heating Oil Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'heating-oil'}">Heating Oil Board</a>
+                </li>
+              </ul></li>
+              <a routerLink="/user/strategies-list" [queryParams]="{sector:'energies'}" class="btn_menu_button_parent" href="#"><button class="btn_menu_button_board">Energies Board</button></a>
+            </ul>
+          </li>
+          <li><a  href="/html/v1/futures/indices.html">Indices <b class="fa fa-angle-down down_arrow_right"></b></a> 
+            <ul>
+              <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'158'}">Indices Articles</a></li>
+              <li><a  href="/html/v1/futures/indices/us-dollar.html">US Dollar Index <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                  <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'159'}">US Dollar Index Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'us-dollar-index'}">US Dollar Index Board</a></li>
+              </ul></li>
+              
+              <li><a  href="/html/v1/futures/indices/sp-500.html">S&P 500 <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                  <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'188'}">S&P 500 Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'futures-sp-500'}">S&P 500 Board</a></li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/indices/nasdaq-100.html">NASDAQ 100 <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                  <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'189'}">NASDAQ 100 Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'nasdaq-100'}">NASDAQ 100 Board</a></li>
+              </ul></li>
+
+              <a routerLink="/user/strategies-list" [queryParams]="{sector:'indices'}" class="btn_menu_button_parent" href="#"><button class="btn_menu_button_board">Indices Board</button></a>
+
+            </ul>
+          </li>
+          <li><a  href="/html/v1/futures/softs.html">Softs <b class="fa fa-angle-down down_arrow_right"></b></a> 
+            <ul>
+              <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'160'}">Softs Articles</a></li>
+              <li><a  href="/html/v1/futures/softs/cotton.html">Cotton <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'161'}">Cotton Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'cotton'}">Cotton Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/futures/softs/sugar.html">Sugar <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'162'}">Sugar Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'sugar'}">Sugar Board</a>
+                </li>
+              </ul></li>
+              <a routerLink="/user/strategies-list" [queryParams]="{sector:'softs'}" class="btn_menu_button_parent" href="#"><button class="btn_menu_button_board">Softs Board</button></a>
+            </ul>
+          </li>
+          <li><a class="community_ui" target="_blank" href="http://community.sambar.website">Futures Community</a></li>
+          <li>
+            <a routerLink="/user/strategies-list" [queryParams]="{market: 'futures'}" class="parent_board_button_futures">Futures Board</a>
+          </li>
+          <!-- <button (click)="openChildModalFutureVideo()" class="btn_menu_button">FUTURES 1-MINUTE DEMO</button> -->
+        </ul>
+  </li> 
+  
+  <li><a href="javascript:void(0);" >Currencies <b class="fa fa-angle-down"></b></a>
+            <ul class="forex_menu_ul">
+              <li class="main-upper-menu"><a routerLink="/opportunities/" [queryParams]="{cid:'198'}">CURRENCIES</a></li>
+              <li>
+                  <a routerLink="/opportunities/" [queryParams]="{cid:'198'}">Currencies Articles</a>
+              </li>
+              <li><a  href="/html/v1/currencies/australian-dollar.html">Australian Dollar <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                  <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'206'}">Australian Dollar Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'australian-dollar'}">Australian Dollar Board</a></li>
+              </ul></li>
+              <li><a  href="/html/v1/currencies/british-pound.html">British Pound <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'207'}">British Pound Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'british-pound'}">British Pound Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/currencies/canadian-dollar.html">Canadian Dollar <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                  <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'208'}">Canadian Dollar Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'canadian-dollar'}">Canadian Dollar Board</a></li>
+              </ul></li>
+              <li><a  href="/html/v1/currencies/euro.html">Euro <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'209'}">Euro Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'euro'}">Euro Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/currencies/japanese-yen.html">Japanese Yen <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'210'}">Japanese Yen Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'japanese-yen'}">Japanese Yen Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/currencies/mexican-peso.html">Mexican Peso <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'211'}">Mexican Peso Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'mexican-peso'}">Mexican Peso Board</a>
+                </li>
+              </ul></li>
+              <li><a  href="/html/v1/currencies/new-zealand-dollar.html">New Zealand Dollar <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul style="width: 245px;">
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'212'}">New Zealand Articles</a></li>
+                <li><a style="width: 215px;" routerLink="/user/strategies-list" [queryParams]="{commodity:'new-zealand-dollar'}">New Zealand Dollar Board</a></li>
+              </ul></li>
+              <li><a  href="/html/v1/currencies/swiss-franc.html">Swiss Franc <b class="fa fa-angle-down down_arrow_right"></b></a>
+                <ul>
+                
+                <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'213'}">Swiss Franc Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'swiss-franc'}">Swiss Franc Board</a>
+                </li>
+              </ul></li>
+              <li><a class="community_ui" target="_blank" href="http://community.sambar.website/index.php?/forum/9-currencies/">Currencies Forum</a></li>
+              <li>
+                <a routerLink="/user/strategies-list" [queryParams]="{sector: 'currencies'}" class="parent_board_button_forex">Currencies Board</a>
+              </li>
+              <!-- <button class="btn_menu_button" (click)="openChildModalForexVideo()">CURRENCIES 1-MINUTE DEMO</button> -->
+            </ul>
+  </li>
+
+  <li><a href="javascript:void(0);">Equities <b class="fa fa-angle-down"></b></a>
+    <ul class="sub_menu_things resources_menu_ul" style="width:250px !important;">
+      <li class="main-upper-menu"><a routerLink="/opportunities/" [queryParams]="{cid:'13'}">EQUITIES</a></li>
+      <li><a routerLink="/opportunities/" [queryParams]="{cid:'13'}">Equities Articles</a>
+      <li><a routerLink="/opportunities/" [queryParams]="{cid:'205'}">Stocks <b class="fa fa-angle-down down_arrow_right_opp"></b></a>
+        <ul style="margin-left:80px;">
+          <li><a routerLink="/opportunities/" [queryParams]="{cid:'205'}">Stocks Articles</a></li>
+          <li><a routerLink="/user/strategies-list" [queryParams]="{market: 'equities'}">Stocks Board</a></li>
+        </ul> 
+       </li>
+       <li><a routerLink="/opportunities/" [queryParams]="{cid:'171'}">ETFs <b class="fa fa-angle-down down_arrow_right_opp"></b></a>
+        <ul style="margin-left:80px;">
+          <li><a routerLink="/opportunities/" [queryParams]="{cid:'171'}">ETFs Articles</a></li>
+          <li><a routerLink="/user/strategies-list" [queryParams]="{market: 'equities'}">ETFs Board</a></li>
+        </ul> 
+       </li>
+       <li><a routerLink="/opportunities/" [queryParams]="{cid:'204'}">ETNs <b class="fa fa-angle-down down_arrow_right_opp"></b></a>
+        <ul style="margin-left:80px;">
+          <li><a routerLink="/opportunities/" [queryParams]="{cid:'204'}">ETNs Articles</a></li>
+          <li><a routerLink="/user/strategies-list" [queryParams]="{market: 'equities'}">ETNs Board</a></li>
+          <!-- <button class="btn_menu_button" style="width:87%;" >ETNs 1-MINUTE DEMO</button> -->
+        </ul> 
+       </li>
+       <li><a class="community_ui" target="_blank" href="http://community.sambar.website/index.php?/forum/513-equities/">Equities Forum</a></li>
+       <li><a routerLink="/user/strategies-list/" [queryParams]="{market:'equities'}" class="parent_board_button_quities">Equities Board</a></li>
+      <!-- <button class="btn_menu_button" (click)="openChildModalStocksVideo()">EQUITIES 1-MINUTE DEMO</button> -->
+      
+    </ul>
+  </li>
+ 
+  <li><a href="javascript:void(0);">Resources <b class="fa fa-angle-down"></b></a>
+    <ul class="sub_menu_things resources_menu_ul" style="width:250px !important;">
+      <li class="main-upper-menu"><a  href="javascript:void(0);">RESOURCES</a></li>
+      <li><a  href="/html/v1/resources/trade-list.html">Demo Trades</a></li>
+      <li><a href="/html/v1/resources/analyst-information.html" >Analyst <b class="fa fa-angle-down down_arrow_right"></b></a>
+        <ul>
+          <li><a href="/html/v1/resources/analyst-information.html" >Analyst Information</a></li>
+          <li><a routerLink="/user/analysts-list"  >Search for Analyst</a></li>
+          <li><a href="/analyst-app/register">Register as Analyst</a></li>
+        </ul> 
+      </li>
+      <li><a  href="/html/v1/resources/publications.html">Publications <b class="fa fa-angle-down down_arrow_right"></b></a>
+        <ul>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'115'}">Books</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'27,38,39,102,172'}">Magazines</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'26,28,30,116'}">Newspapers</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'32,118,119,120,173,174'}" >Websites</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'175,176,177,178,179,180'}">Market Newsletters</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'181'}">Research Publications</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'183'}">Whitepapers</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'35,182'}">Exchanges</a></li>
+
+        </ul>
+      </li>
+      <li><a  href="/html/v1/resources/books.html">Books To Read</a></li>
+      <li><a  href="/html/v1/resources/newsletter.html">Newsletter</a></li>
+      <li><a  href="/html/v1/resources/widgets.html">Widgets <b class="fa fa-angle-down down_arrow_right_opp"></b></a>
+        <ul style="margin-left:80px;">
+          <li class=""><a  href="/html/v1/resources/stock-widgets.html">Equities</a></li>
+          <li class=""><a  href="/html/v1/resources/future-widgets.html">Futures</a></li>
+        </ul> 
+      </li>
+      
+      <li><a  href="/html/v1/resources/chart-demo1.html">Sample Charts</a></li>
+      
+      <li><a class="trade_input" target="_blank" href="/trade-input">Trade Input</a></li>
+      <li><a class="symbols_ui" target="_blank" href="/symbols">Symbols</a></li>
+      <li><a  href="/html/v1/resources/events.html">Events</a></li>
+      <li><a  target="_blank" href="http://community.sambar.website/index.php?/forum/5-faqs/">FAQs</a></li>
+      <li><a  target="_blank" href="http://community.sambar.website">Community</a></li>
+      <li><a  href="/html/v1/resources/invest-with-us.html">Invest With Us</a></li>
+      <!-- <button (click)="openChildModalResourcesVideo()" class="btn_menu_button">TRADES 1-MINUTE DEMO</button> -->
+    </ul>
+  </li>
+  <li><a href="javascript:void(0);">Opportunities <b class="fa fa-angle-down"></b></a>
+    <ul class="sub_menu_things" style="width:300px !important;">
+      <li class="main-upper-menu"><a >OPPORTUNITIES</a></li>
+      <li><a routerLink="/opportunities/">Articles <b class="fa fa-angle-down down_arrow_right_opp"></b></a>
+        <ul style="margin-left:80px;">
+          <li><a routerLink="/opportunities/" [queryParams]="{cid:'14'}">Futures</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{cid:'198'}">Currencies</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{cid:'13'}">Equities</a></li>
+          <!-- <li><a routerLink="/opportunities/" [queryParams]="{cid:'48'}">ETFs</a></li> -->
+        </ul> 
+       </li>
+       <li><a routerLink="/myarticles/">My Articles</a></li>
+      <li><a *ngIf="!authormenu" routerLink="/user/strategies-list" [queryParams]="{filter:'none'}">Strategy Board <b class="fa fa-angle-down down_arrow_right_opp"></b></a>
+        <ul style="margin-left:80px;">
+          <li>
+            <a routerLink="/user/strategies-list" [queryParams]="{market: 'futures'}">Futures Board</a>
+          </li>
+          <li>
+            <a routerLink="/user/strategies-list" [queryParams]="{sector: 'currencies'}">Currencies Board</a>
+          </li>
+          <li><a routerLink="/user/strategies-list"  [queryParams]="{market: 'equities'}">Equities Board</a></li>
+          <!-- <li><a routerLink="/user/strategies-list"  [queryParams]="{market: 'equities'}">ETF Board</a></li> -->
+        </ul> 
+      </li>
+      <!-- <button class="btn_menu_button" style="width:87%;" (click)="openChildModalArticleVideo()">ARTICLES 1-MINUTE DEMO</button>
+      <button class="btn_menu_button" style="width:87%;" (click)="openChildModalStrategyVideo()">STRATEGY BOARD 1-MINUTE DEMO</button> -->
+    </ul>
+  </li>
+  <li><a href="javascript:void(0);" *ngIf="!dynamicmenu">My Profile <b class="fa fa-angle-down"></b></a>
+      <ul class="sub_menu_things" style="width: 270px !important;">
+        <li class="main-upper-menu"><a routerLink="/user/profile">MY PROFILE</a></li>
+        <li><a  routerLink="/user/profile" >View Profile</a></li>
+        <li><a *ngIf="!authormenu" href="/html/v1/user/subscription" routerLink="/user/subscription">Upgrade My Plan</a></li>
+        <li><a class="logout_user" routerLink="/logout" >Log Out</a></li>
+        <!-- <button *ngIf="authormenu" class="btn_menu_button" style="width:85.5%;" (click)="openChildModalMyprofileAuthorVideo()">MY PROFILE 1-MINUTE DEMO</button> -->
+        <!-- <button *ngIf="!authormenu" class="btn_menu_button" style="width:85.5%;" (click)="openChildModalMyprofileVideo()">MY PROFILE 1-MINUTE DEMO</button>
+        <button *ngIf="!authormenu" class="btn_menu_button_plan" style="width:85.5%;" (click)="openChildModalMyplanVideo()">MY PLAN 1-MINUTE DEMO</button> -->
+      </ul>
+  </li>
+  <li><a href="javascript:void(0);" *ngIf="dynamicmenu">Register <b class="fa fa-angle-down"></b></a>
+      <ul class="sub_menu_things" style="width: 270px !important;">
+        <li class="main-upper-menu"><a routerLink="/register">Register</a></li>
+        <li><a routerLink="/register" >Register as User</a></li>
+        <li><a href="/analyst-app/register">Register as Analyst</a></li>
+        <button class="menu_btns btn_menu_button" (click)="childModalDifference = true">WHAT’S THE DIFFERENCE?</button>
+      </ul>
+  </li>
+   <li><a href="javascript:void(0);" *ngIf="dynamicmenu">Log In <b class="fa fa-angle-down"></b></a>
+      <ul class="sub_menu_things" style="width: 270px !important;">
+        <li class="main-upper-menu"><a routerLink="/login">Log In</a></li>
+        <li><a  routerLink="/login" >Log In as User</a></li>
+        <li><a href="/analyst-app/login">Log In as Analyst</a></li>
+      </ul>
+  </li>
+  
+</ul>
+
+</nav>
+  <!-- <div class="extra-menu" *ngIf="!dynamicmenu && !authormenu && showTokenBtn">
+    <a *ngIf="!authormenu" href="/html/v1/user/subscription" routerLink="/user/subscription"><div class="credits_plan_user"><span class="plan_of_user">{{groupnm}}</span><span class="credits_of_user">  T{{nooftoken}}   C{{noofcredits}}</span> <span [attr.tooltip]="planstringval" class="tooltip-parent for_plan_value"><i class="fa fa-info-circle"></i></span></div></a>
+    <a *ngIf="authormenu" href="javascript:void(0);"><div class="credits_plan_user"><span class="plan_of_user">{{groupnm}}</span><span class="credits_of_user">  T{{nooftoken}}   C{{noofcredits}}</span> <span [attr.tooltip]="planstringval" class="tooltip-parent for_plan_value"><i class="fa fa-info-circle"></i></span></div></a>
+  </div> -->  
+  <div class="dropdown extra-menu pln-dv" *ngIf="!dynamicmenu && !authormenu && showTokenBtn">
+      <a *ngIf="!authormenu" href="/html/v1/user/subscription" routerLink="/user/subscription">
+        <button class="dropdown-toggle pln-btn" type="button" data-toggle="dropdown">{{planname}}
+          <i class="fa fa-angle-down"></i>
+          <!-- <span [attr.tooltip]="planstringval" class="tooltip-parent for_plan_value"><i class="fa fa-info-circle"></i></span> -->
+        </button>
+        </a>
+        <a *ngIf="authormenu" href="javascript:void(0);">
+        <button class="dropdown-toggle pln-btn" type="button" data-toggle="dropdown">{{planname}}
+          <i class="fa fa-angle-down"></i>
+        </button>
+        </a>
+    <ul class="dropdown-menu pln-btn-ul" style="width:275px;border-top: 3px solid #1278b2 !important;padding-bottom: 20px;padding-top: 20px;border-radius: 0 0 5px 5px;box-shadow: 0 2px 5px rgb(0 0 0 / 10%);margin-top:29px;">
+      <li><a>LeBar: {{myLebarTotal}}, Credits: {{noofcredits}}, Cents: {{centsTotal}}</a></li>
+      <li><a>Purchased: {{leBarPurchase}}, Available: {{leBarAvailable}}</a></li>
+      <li *ngIf="purpose1 != 'Null' || purpose2 != 'Null' || purpose3 != 'Null' "><a>Escrowed LeBar:</a></li>
+      <li *ngIf="blockedTokens1"><a>&nbsp;&nbsp;{{ purpose1 }}: {{blockedTokens1}}</a></li>
+      <li *ngIf="blockedTokens2"><a>&nbsp;&nbsp;{{ purpose2 }}: {{blockedTokens2}}</a></li>
+      <li *ngIf="blockedTokens3"><a>&nbsp;&nbsp;{{ purpose3 }}: {{blockedTokens3}}</a></li>
+    </ul>
+  </div>
+  <div class="extra-menu" *ngIf="authormenu">
+    <img class="author_image" src="{{userpicture}}" onerror="this.onerror=null;this.src='assets/img/no-photo.png'">
+  </div>
+  <div class="extra-menu" *ngIf="dynamicmenu">
+    <a href="/html/v1/subscription-plans.html" ><div class="credits_plan_user">Plans & Pricing <span tooltip="Check plans & pricing"  class="tooltip-parent for_plan_value"><i class="fa fa-info-circle"></i></span></div></a>
+  </div>
+
+
+<!-- Mobile Toggle Menu -->
+<span class="mobileToggleIcon" (click)="openMobileNav()">&#9776;</span>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeMobileNav()">&times;</a>
+  <a href="javascript:void(0)"  (click)="mouseEnter('home')" class="home-main first_home">Home <b class="fa fa-angle-down"></b></a>
+    <ul class="sub_menu_things home-sub">
+      <li class="main-upper-menu"><a href="/html/v1/home.html">HOME</a></li>
+      <li><a  href="/html/v1/company.html">Our Company</a></li>
+      <li><a  href="/html/v1/about-us.html">About Us</a></li>
+      <li><a  href="/html/v1/our-team.html">Our Team</a></li>
+      <li><a  href="/html/v1/platform-features.html">Platform Features</a></li>
+      <li><a  href="/html/v1/careers.html">Careers</a></li>
+      <li><a  href="/html/v1/platform-technology.html">Platform Technology</a></li>
+      <li><a  href="/html/v1/intellectual-property.html">Intellectual Property</a></li>
+      <li><a  href="/html/v1/roadmap.html">Roadmap</a></li>
+      <li><a  href="/html/v1/press-release.html">Press Release</a></li>
+      <li><a  href="/html/v1/contact-us.html">Contact Us</a></li>
+      <!-- <button class="btn_menu_button" (click)="openChildModalHomeVideo()">HOME 1-MINUTE DEMO</button> -->
+    </ul>
+  <a href="javascript:void(0);"   (click)="mouseEnter('future');">Futures <b class="fa fa-angle-down"></b></a>
+    <ul class="sub_menu_things futures_menu_ul future-sub">
+          <li class="main-upper-menu"><a routerLink="/opportunities/" [queryParams]="{cid:'14'}">Futures Articles</a></li>
+          <li><a (click)="mouseEnterSub('interest')" href="javascript:void(0);">Interest Rates <b class="fa fa-angle-down"></b></a>
+             <ul class="sub-menu interest-sub-menu">
+              <li><a href="/html/v1/futures/interest-rate.html">Interest Rates</a></li>
+              
+              <li>
+                <a  (click)="showSub3Menu('two-year')"  href="javascript:void(0);">2-Year T-Note <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 two-year-sub-menu-3">
+                  <li><a href="/html/v1/futures/interest-rate/2-year.html">2-Year T-Note</a></li>
+                  <li><a routerLink="/user/strategies-list" [queryParams]="{commodity:'2-year-t-note'}">2-Year T-Note Board</a></li>
+                      <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'141'}">2-Year T-Note Articles</a></li>
+                </ul>
+              </li>
+              <li>
+                <a  (click)="showSub3Menu('five-year')" href="javascript:void(0);">5-Year T-Note <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 five-year-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/interest-rate/5-year.html">5-Year T-Note</a
+                      ></li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'5-year-t-note'}">5-Year T-Note Board</a
+                      ></li>
+                      <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'142'}">5-Year T-Note Articles</a></li>
+                </ul>
+              </li>
+              <li>
+                <a  (click)="showSub3Menu('ten-year')" href="javascript:void(0);">10-Year T-Note <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 ten-year-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/interest-rate/10-year.html">10-Year T-Note</a></li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'10-year-t-note'}">10-Year T-Note Board</a></li>
+                    <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'143'}">10-Year T-Note Articles</a></li>
+                </ul>
+              </li>
+              <li><a  (click)="showSub3Menu('thirty-year')" href="javascript:void(0);">30-Year T-Bond <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 thirty-year-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/interest-rate/30-year.html">30-Year T-Bond</a></li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'30-year-t-bond'}">30-Year T-Bond Board</a></li>
+                    <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'144'}">30-Year T-Bond Articles</a></li>
+                </ul>
+              </li>
+              <!-- <li class=""><a  href="/html/v1/opportunities/?sfid=2895&_sft_post_tag=interest-rates">Interest Rates Articles</a></li> -->
+              <li><a routerLink="/opportunities" [queryParams]="{cid:'140'}">Interest Rates Articles</a></li>
+              <a routerLink="/user/strategies-list" [queryParams]="{sector:'interest-rates'}" class="btn_menu_button_parent" href="#"><button class="btn_menu_button_board">IR Board</button></a>
+             </ul> 
+          </li>
+          <li><a (click)="mouseEnterSub('gains')" href="javascript:void(0);">Grains <b class="fa fa-angle-down"></b></a>
+            <ul class="sub-menu gains-sub-menu">
+              <li><a href="/html/v1/futures/grains.html">Grains</a></li>
+              <!-- <li><a routerLink="/opportunities/" [queryParams]="{cid:'129'}">Grains Articles</a></li> -->
+              <li>
+                <a  (click)="showSub3Menu('chicago-wheat')" href="javascript:void(0);">Chicago Wheat <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 chicago-wheat-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/grains/chicago-wheat.html">Chicago Wheat</a
+                      ></li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'chicago-wheat'}">Chicago Wheat Board</a
+                      ></li>
+                      <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'130'}">Chicago Wheat Articles</a></li>
+                </ul>
+              </li>
+              <li>
+                <a (click)="showSub3Menu('cocoa')"  href="javascript:void(0);">Cocoa <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 cocoa-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/grains/cocoa.html">Cocoa</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'cocoa'}">Cocoa Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'132'}">Cocoa Articles</a></li>
+                </ul>
+              </li>
+              <li>
+                <a (click)="showSub3Menu('coffee')"  href="javascript:void(0);">Coffee <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 coffee-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/grains/coffee.html">Coffee</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'coffee'}">Coffee Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'133'}">Coffee Articles</a></li>
+                </ul>
+              </li>
+              <li>
+                <a (click)="showSub3Menu('corn')"  href="javascript:void(0);">Corn <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 corn-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/grains/corn.html">Corn </a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'corn'}">Corn Board</a>
+                  </li>
+                   <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'131'}">Corn Articles</a></li>
+                </ul>
+              </li>
+              <li >
+                <a (click)="showSub3Menu('kansas')"  href="javascript:void(0);">Kansas City Wheat <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 kansas-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/grains/kansas-city-wheat.html">Kansas City Wheat</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'kansas-city-wheat'}">KC Wheat Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'134'}">KC Wheat Articles</a></li>
+                </ul>
+              </li>
+              <li>
+                <a (click)="showSub3Menu('oats')"  href="javascript:void(0);">Oats <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 oats-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/grains/oats.html">Oats</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'oats'}">Oats Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'135'}">Oats Articles</a></li>
+                </ul>
+              </li>
+              <li>
+                <a (click)="showSub3Menu('rough-rice')"  href="javascript:void(0);">Rough Rice <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 rough-rice-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/grains/rough-rice.html">Rough Rice</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'rough-rice'}">Rough Rice Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities" [queryParams]="{cid:'136'}">Rough Rice Articles</a></li>
+                </ul>
+              </li>
+              <li>
+                <a (click)="showSub3Menu('soybean')"  href="javascript:void(0);">Soybean <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 soybean-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/grains/soybean.html">Soybean</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'soybean'}">Soybean Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'137'}">Soybean Articles</a></li>
+                </ul>
+              </li>
+              <li>
+                <a (click)="showSub3Menu('soybean-meal')"  href="javascript:void(0);">Soybean Meal <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 soybean-meal-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/grains/soybean-meal.html">Soybean Meal</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'soybean-meal'}">Soybean Meal Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'138'}">Soybean Meal Articles</a></li>
+                </ul>
+              </li>
+              <li>
+                <a (click)="showSub3Menu('soybean-oil')"  href="javascript:void(0);">Soybean Oil <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 soybean-oil-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/grains/soybean-oil.html">Soybean Oil</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'soybean-oil'}">Soybean Oil Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'139'}">Soybean Oil Articles</a></li>
+                </ul>
+              </li>
+              <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'129'}">Grains Articles</a></li>
+              <a routerLink="/user/strategies-list" [queryParams]="{sector:'grains'}" class="btn_menu_button_parent" ><button class="btn_menu_button_board">Grains Board</button></a>
+            </ul>
+          </li>
+          <li><a (click)="mouseEnterSub('metals')"  href="javascript:void(0);">Metals <b class="fa fa-angle-down"></b></a>
+            <ul class="sub-menu metals-sub-menu">
+              <li>
+                <a (click)="mouseEnterSub('metals')"  href="/html/v1/futures/metals.html">Metals </a>
+                <a (click)="showSub3Menu('copper')"  href="javascript:void(0);">Copper <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 copper-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/metals/copper.html">Copper</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'copper'}">Copper Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'146'}">Copper Articles</a></li>
+                </ul>
+              </li>
+              <li>
+                <a (click)="showSub3Menu('gold')"  href="javascript:void(0);">Gold <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 gold-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/metals/gold.html">Gold</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'gold'}">Gold Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'148'}">Gold Articles</a></li>
+                </ul>
+              </li>
+              <li>
+                <a (click)="showSub3Menu('platinum')"  href="javascript:void(0);">Platinum <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 platinum-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/metals/platinum.html">Platinum</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'platinum'}">Platinum Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'149'}">Platinum Articles</a></li>
+                </ul>
+              </li>
+              <li>
+                <a (click)="showSub3Menu('silver')"  href="javascript:void(0);">Silver <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 silver-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/metals/silver.html">Silver</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'silver'}">Silver Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'147'}">Silver Articles</a></li>
+                </ul>
+              </li>
+              <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'145'}">Metals Articles</a></li>
+              <a routerLink="/user/strategies-list" [queryParams]="{sector:'metals'}" class="btn_menu_button_parent" ><button class="btn_menu_button_board">Metals Board</button></a>
+            </ul>
+          </li>
+          <li>
+            <a (click)="mouseEnterSub('meats')"  href="javascript:void(0);">Meats <b class="fa fa-angle-down"></b></a>
+           <ul class="sub-menu meats-sub-menu">
+            <li>
+              <a   href="/html/v1/futures/meats.html">Meats</a>
+               <a (click)="showSub3Menu('feeder-cattle')"   href="javascript:void(0);">Feeder Cattle <b class="fa fa-angle-down"></b></a>
+               <ul class="sub-menu-3 feeder-cattle-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/meats/feeder-cattle.html">Feeder Cattle</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'feeder-cattle'}">Feeder Cattle Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'151'}">Feeder Cattle Articles</a></li>
+               </ul>
+            </li>
+            <li>
+               <a (click)="showSub3Menu('lean-hog')"  href="javascript:void(0);">Lean Hog <b class="fa fa-angle-down"></b></a>
+               <ul class="sub-menu-3 lean-hog-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/meats/lean-hog.html">Lean Hog</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'lean-hog'}">Lean Hog Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'152'}">Lean Hog Articles</a></li>
+               </ul>
+            </li>
+            <li>
+               <a (click)="showSub3Menu('live-cattle')"  href="javascript:void(0);">Live Cattle <b class="fa fa-angle-down"></b></a>
+               <ul class="sub-menu-3 live-cattle-sub-menu-3">
+                  <li>
+                    <a href="/html/v1/futures/meats/live-cattle.html">Live Cattle</a>
+                  </li>
+                  <li>
+                    <a routerLink="/user/strategies-list" [queryParams]="{commodity:'live-cattle'}">Live Cattle Board</a>
+                  </li>
+                  <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'153'}">Live Cattle Articles</a></li>
+               </ul>
+            </li>
+            <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'150'}">Meats Articles</a></li>
+              <a routerLink="/user/strategies-list" [queryParams]="{sector:'meats'}" class="btn_menu_button_parent" ><button class="btn_menu_button_board">Meats Board</button></a>
+            </ul>
+          </li>
+          <li>
+           <a (click)="mouseEnterSub('energies')"  href="javascript:void(0);">Energies <b class="fa fa-angle-down"></b></a>
+           <ul class="sub-menu energies-sub-menu">
+              <li>
+                 <a  href="/html/v1/futures/energies.html">Energies</a>
+                 <a (click)="showSub3Menu('crude-oil')"  href="javascript:void(0);">Crude Oil <b class="fa fa-angle-down"></b></a>
+                 <ul class="sub-menu-3 crude-oil-sub-menu-3">
+                    <li>
+                      <a href="/html/v1/futures/energies/crude-oil.html">Crude Oil</a>
+                      <a routerLink="/user/strategies-list" [queryParams]="{commodity:'crude-oil'}">Crude Oil Board</a>
+                    </li>
+                    <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'155'}">Crude Oil Articles</a></li>
+                 </ul>
+              </li>
+              <li>
+                 <a (click)="showSub3Menu('gasoline')"  href="javascript:void(0);">Gasoline <b class="fa fa-angle-down"></b></a>
+                 <ul class="sub-menu-3 gasoline-sub-menu-3">
+                    <li>
+                      <a href="/html/v1/futures/energies/gasoline.html">Gasoline </a>
+                    </li>
+                    <li>
+                      <a routerLink="/user/strategies-list" [queryParams]="{commodity:'gasoline'}">Gasoline Board</a>
+                    </li>
+                    <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'156'}">Gasoline Articles</a></li>
+                 </ul>
+              </li>
+              <li>
+                 <a (click)="showSub3Menu('natural-gas')"  href="javascript:void(0);">Natural Gas <b class="fa fa-angle-down"></b></a>
+                 <ul class="sub-menu-3 natural-gas-sub-menu-3">
+                    <li>
+                      <a href="/html/v1/futures/energies/natural-gas.html">Natural Gas</a>
+                    </li>
+                    <li>
+                      <a routerLink="/user/strategies-list" [queryParams]="{commodity:'natural-gas'}">Natural Gas Board</a>
+                    </li>
+                    <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'157'}">Natural Gas Articles</a></li>
+                 </ul>
+              </li>
+              <li><a  (click)="showSub3Menu('heating-oil')"  href="javascript:void(0);">Heating Oil <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 heating-oil-sub-menu-3">
+                <li ><a href="/html/v1/futures/energies/heating-oil.html">Heating Oil</a></li>
+                <li ><a routerLink="/opportunities/" [queryParams]="{cid:'187'}">Heating Oil Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'heating-oil'}">Heating Oil Board</a>
+                </li>
+              </ul></li>
+              <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'154'}">Energies Articles</a></li>
+              <a routerLink="/user/strategies-list" [queryParams]="{sector:'energies'}" class="btn_menu_button_parent" ><button class="btn_menu_button_board">Energies Board</button></a>
+           </ul>
+          </li>
+          <li>
+           <a (click)="mouseEnterSub('indices')"  href="javascript:void(0);">Indices <b class="fa fa-angle-down"></b></a> 
+           <ul class="sub-menu indices-sub-menu">
+              <li>
+                 <a href="/html/v1/futures/indices.html">Indices</a>
+                 <a (click)="showSub3Menu('us-dollar-index')"  href="javascript:void(0);">US Dollar Index <b class="fa fa-angle-down"></b></a>
+                 <ul class="sub-menu us-dollar-index-sub-menu-3">
+                    <li>
+                      <a href="/html/v1/futures/indices/us-dollar.html">US Dollar Index</a></li>
+                    <li>
+                      <a routerLink="/user/strategies-list" [queryParams]="{commodity:'us-dollar-index'}">US Dollar Index Board</a></li>
+                      <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'159'}">US Dollar Index Articles</a></li>
+                 </ul>
+              </li>
+
+              <li><a (click)="showSub3Menu('sp-500')" href="javascript:void(0);">S&P 500 <b class="fa fa-angle-down"></b></a>
+                
+                <ul class="sub-menu-3 sp-500-sub-menu-3">
+                  <li class=""><a href="/html/v1/futures/indices/sp-500.html">S&P 500 </a></li>
+                  <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'188'}">S&P 500 Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'futures-sp-500'}">S&P 500 Board</a></li>
+              </ul></li>
+              <li><a  (click)="showSub3Menu('NASDAQ-100')" href="javascript:void(0);">NASDAQ 100 <b class="fa fa-angle-down"></b></a>
+                <ul class="sub-menu-3 NASDAQ-100-sub-menu-3">
+                  <li class=""><a href="/html/v1/futures/indices/nasdaq-100.html">NASDAQ 100</a></li>
+                  <li class=""><a routerLink="/opportunities/" [queryParams]="{cid:'189'}">NASDAQ 100 Articles</a></li>
+                <li>
+                  <a routerLink="/user/strategies-list" [queryParams]="{commodity:'nasdaq-100'}">NASDAQ 100 Board</a></li>
+              </ul></li>            
+
+              <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'158'}">Indices Articles</a></li>
+              <a routerLink="/user/strategies-list" [queryParams]="{sector:'indices'}" class="btn_menu_button_parent" ><button class="btn_menu_button_board">Indices Board</button></a>
+           </ul>
+          </li>
+          <li>
+           <a (click)="mouseEnterSub('softs')"  href="javascript:void(0);">Softs <b class="fa fa-angle-down"></b></a> 
+           <ul class="sub-menu softs-sub-menu">
+              <li>
+                 <a href="/html/v1/futures/softs.html">Softs </a>
+                 <a (click)="showSub3Menu('cotton')"  href="javascript:void(0);">Cotton <b class="fa fa-angle-down"></b></a>
+                 <ul class="sub-menu-3 cotton-sub-menu-3">
+                    <li>
+                      <a href="/html/v1/futures/softs/cotton.html">Cotton</a>
+                    </li>
+                    <li>
+                      <a routerLink="/opportunities" [queryParams]="{cid:'161'}">Cotton Articles</a>
+                    </li>
+                    <li>
+                      <a routerLink="/user/strategies-list" [queryParams]="{commodity:'cotton'}">Cotton Board</a>
+                    </li>
+                 </ul>
+              </li>
+              <li>
+                 <a (click)="showSub3Menu('sugar')"  href="javascript:void(0);">Sugar <b class="fa fa-angle-down"></b></a>
+                 <ul class="sub-menu-3 sugar-sub-menu-3">
+                    <li>
+                      <a  href="/html/v1/futures/softs/sugar.html">Sugar</a>
+                    </li>
+                    <li>
+                      <a routerLink="/user/strategies-list" [queryParams]="{commodity:'sugar'}">Sugar Board</a>
+                    </li>
+                    <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'162'}">Sugar Articles</a></li>
+                 </ul>
+              </li>
+              <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'160'}">Softs Articles</a></li>
+              <a routerLink="/user/strategies-list" [queryParams]="{sector:'softs'}" class="btn_menu_button_parent" ><button class="btn_menu_button_board">Softs Board</button></a>
+           </ul>
+          </li>
+          <li><a routerLink="/user/strategies-list/futures" class="parent_board_button_futures">Futures Board</a></li>
+          <!-- <button (click)="openChildModalFutureVideo()" class="btn_menu_button">FUTURES 1-MINUTE DEMO</button> -->
+    </ul>
+  <a href="javascript:void(0);"  (click)="mouseEnter('forex')" class="home-main">Currencies <b class="fa fa-angle-down"></b></a>
+    <ul class="sub_menu_things futures_menu_ul forex-sub"  style="padding: 0;margin: 0">
+     <li class="main-upper-menu"><a routerLink="/opportunities/" [queryParams]="{cid:'198'}">Currencies Articles</a></li>
+     <li>
+        <a (click)="mouseEnterSub('australian-dollar')"  href="javascript:void(0);">Australian Dollar <b class="fa fa-angle-down"></b></a>
+        <ul class="sub-menu australian-dollar-sub-menu">
+           <li><a href="/html/v1/currencies/australian-dollar.html">Australian Dollar</a></li>
+           <li><a  routerLink="/user/strategies-list" [queryParams]="{commodity:'australian-dollar'}">Australian Dollar Board</a></li>
+           <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'206'}">Australian Dollar Articles</a></li>
+        </ul>
+     </li>
+     <li>
+        <a  (click)="mouseEnterSub('british-pound')" href="javascript:void(0);">British Pound <b class="fa fa-angle-down"></b></a>
+        <ul class="sub-menu british-pound-sub-menu">
+           <li><a href="/html/v1/currencies/british-pound.html">British Pound</a></li>
+           <li><a routerLink="/user/strategies-list" [queryParams]="{commodity:'british-pound'}">British Pound Board</a></li>
+           <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'207'}">British Pound Articles</a></li>
+        </ul>
+     </li>
+     <li>
+        <a  (click)="mouseEnterSub('canadian-dollar')" href="javascript:void(0);">Canadian Dollar <b class="fa fa-angle-down"></b></a>
+        <ul class="sub-menu canadian-dollar-sub-menu">
+           <li><a href="/html/v1/currencies/canadian-dollar.html">Canadian Dollar</a></li>
+           <li><a routerLink="/user/strategies-list" [queryParams]="{commodity:'canadian-dollar'}">Canadian Dollar Board</a></li>
+           <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'208'}">Canadian Dollar Articles</a></li>
+        </ul>
+     </li>
+     <li>
+        <a (click)="mouseEnterSub('euro')"  href="javascript:void(0);">Euro <b class="fa fa-angle-down"></b></a>
+        <ul class="sub-menu euro-sub-menu">
+           <li><a href="/html/v1/currencies/euro.html">Euro</a></li>
+           <li><a routerLink="/user/strategies-list" [queryParams]="{commodity:'euro'}">Euro Board</a></li>
+           <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'209'}">Euro Articles</a></li>
+        </ul>
+     </li>
+     <li>
+        <a (click)="mouseEnterSub('japanese-yen')"  href="javascript:void(0);">Japanese Yen <b class="fa fa-angle-down"></b></a>
+        <ul class="sub-menu japanese-yen-sub-menu">
+           <li><a href="/html/v1/currencies/japanese-yen.html">Japanese Yen</a></li>
+           <li><a routerLink="/user/strategies-list" [queryParams]="{commodity:'japanese-yen'}">Japanese Yen Board</a></li>
+            <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'210'}">Japanese Yen Articles</a></li>
+        </ul>
+     </li>
+     <li>
+        <a (click)="mouseEnterSub('mexican-peso')"  href="javascript:void(0);">Mexican Peso <b class="fa fa-angle-down"></b></a>
+        <ul class="sub-menu mexican-peso-sub-menu">
+           <li><a href="/html/v1/currencies/mexican-peso.html">Mexican Peso</a></li>
+           <li><a routerLink="/user/strategies-list" [queryParams]="{commodity:'mexican-peso'}">Mexican Peso Board</a></li>
+           <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'211'}">Mexican Peso Articles</a></li>
+        </ul>
+     </li>
+     <li>
+        <a (click)="mouseEnterSub('new-zealand-dollar')"  href="javascript:void(0);">New Zealand Dollar <b class="fa fa-angle-down"></b></a>
+        <ul class="sub-menu new-zealand-dollar-sub-menu" >
+           <li><a href="/html/v1/currencies/new-zealand-dollar.html">New Zealand Dollar</a></li>
+           <li><a routerLink="/user/strategies-list" [queryParams]="{commodity:'new-zealand-dollar'}">New Zealand Dollar Board</a></li>
+           <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'212'}">New Zealand Articles</a></li>
+        </ul>
+     </li>
+     <li>
+        <a (click)="mouseEnterSub('swiss-franc')"   href="javascript:void(0);">Swiss Franc <b class="fa fa-angle-down "></b></a>
+        <ul class="sub-menu swiss-franc-sub-menu">
+           <li><a href="/html/v1/currencies/swiss-franc.html">Swiss Franc</a></li>
+           <li><a routerLink="/user/strategies-list" [queryParams]="{commodity:'swiss-franc'}">Swiss Franc Board</a></li>
+           <li class=""><a  routerLink="/opportunities/" [queryParams]="{cid:'213'}">Swiss Franc Articles</a></li>
+        </ul>
+     </li>
+     <!-- <li>
+        <a  routerLink="/opportunities/" [queryParams]="{cid:'198'}">Currencies Articles</a>
+     </li> -->
+     <li><a routerLink="/user/strategies-list" [queryParams]="{sector: 'currencies'}" class="btn_menu_button">Currencies Board</a></li>
+     <!-- <button class="btn_menu_button" (click)="openChildModalForexVideo()">CURRENCIES 1-MINUTE DEMO</button> -->
+  </ul>
+
+
+  <a href="javascript:void(0)" (click)="mouseEnter('stocks')" class="home-main">Equities <b class="fa fa-angle-down"></b></a>
+    <ul class="sub_menu_things stocks-sub" >
+      <!-- <li class="main-upper-menu"><a routerLink="/opportunities/" [queryParams]="{cid:'13'}">EQUITIES</a></li> -->
+      <li><a routerLink="/opportunities/" [queryParams]="{cid:'13'}">Equities Articles</a>
+      <li><a (click)="mouseEnterSub('stocks')" href="javascript:void(0)" >Stocks <b class="fa fa-angle-down "></b></a>
+        <ul class="sub-menu stocks-sub-menu">
+          <!-- <li><a routerLink="/opportunities/" [queryParams]="{cid:'205'}">Stocks</a></li> -->
+          <li><a routerLink="/opportunities/" [queryParams]="{cid:'205'}">Stocks Articles</a></li>
+          <li><a routerLink="/user/strategies-list" [queryParams]="{market: 'equities'}">Stocks Board</a></li>
+        </ul> 
+      </li>
+      <li><a (click)="mouseEnterSub('etfs')" href="javascript:void(0)">ETFs <b class="fa fa-angle-down "></b></a>
+        <ul class="sub-menu etfs-sub-menu">
+          <!-- <li><a routerLink="/opportunities/" [queryParams]="{cid:'171'}">ETFs</a></li> -->
+          <li><a routerLink="/opportunities/" [queryParams]="{cid:'171'}">ETFs Articles</a></li>
+          <li><a routerLink="/user/strategies-list" [queryParams]="{market: 'equities'}">ETFs Board</a></li>
+        </ul> 
+      </li>
+      <li><a (click)="mouseEnterSub('etns')" href="javascript:void(0)">ETNs <b class="fa fa-angle-down "></b></a>
+        <ul class="sub-menu etns-sub-menu">
+          <!-- <li><a routerLink="/opportunities/" [queryParams]="{cid:'204'}">ETNs</a></li> -->
+          <li><a routerLink="/opportunities/" [queryParams]="{cid:'204'}">ETNs Articles</a></li>
+          <li><a routerLink="/user/strategies-list" [queryParams]="{market: 'equities'}">ETNs Board</a></li>
+          <!-- <button class="btn_menu_button" style="width:87%;" >ETNs 1-MINUTE DEMO</button> -->
+        </ul> 
+      </li>
+      <li><a routerLink="/user/strategies-list/" [queryParams]="{market:'equities'}" class="btn_menu_button">Equities Board</a></li>
+      <!-- <button class="btn_menu_button" (click)="openChildModalStocksVideo()">EQUITIES 1-MINUTE DEMO</button> --> 
+    </ul>
+
+  <a href="javascript:void(0)" (click)="mouseEnter('resources')">Resources <b class="fa fa-angle-down"></b></a>
+    <ul class="sub_menu_things resources-sub" >
+      <li class="main-upper-menu"><a href="javascript:void(0);">RESOURCES</a></li>
+      <li><a  href="/html/v1/resources/trade-list.html">Demo Trades</a></li>
+      <li><a href="javascript:void(0);" (click)="mouseEnterSub('analyst')">Analyst <b class="fa fa-angle-down "></b></a>
+        <ul class="sub-menu analyst-sub-menu">
+          <li><a href="/html/v1/resources/analyst-information.html" >Analyst</a>
+          <li><a href="/html/v1/resources/write-for-us.html" >Analyst Information</a></li>
+          <li><a routerLink="/user/analysts-list"  >Search for Analyst</a></li>
+          <li><a routerLink="/register/analyst">Register as Analyst</a></li>
+        </ul> 
+      </li>
+      <li><a  (click)="mouseEnterSub('publications')" href="javascript:void(0)">Publications <b class="fa fa-angle-down"></b></a>
+        <ul class="sub-menu publications-sub-menu">
+          <li><a href="/html/v1/resources/publications.html">Publications</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'115'}">Books</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'27,38,39,102,172'}">Magazines</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'26,28,30,116'}">Newspapers</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'32,118,119,120,173,174'}" >Websites</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'175,176,177,178,179,180'}">Market Newsletters</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'181'}">Research Publications</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'183'}">Whitepapers</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'35,182'}">Exchanges</a></li>
+        </ul>
+      </li>
+      <li><a  href="/html/v1/resources/books.html">Books To Read</a></li>
+      <li><a  href="/html/v1/resources/newsletter.html">Newsletter</a></li>
+      <li><a  (click)="mouseEnterSub('widget')" href="javascript:void(0)">Widgets<b class="fa fa-angle-down"></b></a>
+        <ul class="sub-menu widget-sub-menu">
+          <li class=""><a href="/html/v1/resources/widgets.html">Widgets</a></li>
+          <li class=""><a routerLink="/resources/stock-widgets.html">Equities</a></li>
+          <li class=""><a routerLink="/resources/future-widgets.html">Futures</a></li>
+        </ul>
+      </li>
+      <li><a  href="/html/v1/resources/submit-ticket.html">Support</a></li>
+      <li><a  href="/html/v1/resources/chart-demo1.html">Sample Charts</a></li>
+      <li><a  href="javascript:void(0);" (click)="sitefeedback()">Site Feedback</a></li>
+      <li><a  href="/html/v1/resources/events.html">Events</a></li>
+      <li><a  href="/html/v1/resources/invest-with-us.html">Invest With Us</a></li>
+      <!-- <button (click)="openChildModalResourcesVideo()" class="btn_menu_button">TRADES 1-MINUTE DEMO</button> -->
+    </ul>
+  <a href="javascript:void(0)" (click)="mouseEnter('opportunities')">Opportunities <b class="fa fa-angle-down"></b></a>
+    <ul class="sub_menu_things opportunities-sub">
+      <li class="main-upper-menu"><a routerLink="/opportunities/">Opportunities</a></li>
+      <li><a (click)="mouseEnterSub('articles')" >Articles <b class="fa fa-angle-down"></b></a>
+        <ul class="sub-menu articles-sub-menu-3">
+          <li><a routerLink="/opportunities/" [queryParams]="{cid:'14'}">Futures</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{cid:'198'}">Currencies</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{cid:'13'}">Equities</a></li>
+          <!-- <li><a routerLink="/opportunities/" [queryParams]="{sfid:'48'}">ETFs</a></li> -->
+        </ul> 
+       </li>
+      <li><a (click)="mouseEnterSub('strategy-board')" href="javascript:void(0)">Strategy Board <b class="fa fa-angle-down"></b></a>
+        <ul class="sub-menu strategy-board-sub-menu-3">
+          <li><a routerLink="/user/strategies-list"  [queryParams]="{filter:'none'}">Strategy Board</a></li>
+          <li><a routerLink="/user/strategies-list/futures">Futures Board</a></li>
+          <li><a routerLink="/user/strategies-list/forex">Currencies Board</a></li>
+          <li><a routerLink="/user/strategies-list/stocks">Equities Board</a></li>
+          <!-- <li><a routerLink="/user/strategies-list/etfs">ETF Board</a></li> -->
+        </ul> 
+      </li>
+      <!-- <button class="btn_menu_button" style="margin-top:10px;margin-bottom:10px;" (click)="openChildModalArticleVideo()">ARTICLES 1-MINUTE DEMO</button>
+      <button class="btn_menu_button" (click)="openChildModalStrategyVideo()" >STRATEGY BOARD 1-MINUTE DEMO</button> -->
+    </ul>
+  <a href="javascript:void(0)" *ngIf="!dynamicmenu" (click)="mouseEnter('profile')">My Profile <b class="fa fa-angle-down"></b></a>
+    <ul class="sub_menu_things profile-sub">
+      <li class="main-upper-menu"><a  routerLink="/user/profile">MY PROFILE</a></li>
+      <li><a  routerLink="/user/profile" >View Profile</a></li>
+      <li><a href="/html/v1/user/subscription" routerLink="/user/subscription">Upgrade My Plan</a></li>
+      <li><a class="logout_user" routerLink="/logout" >Log Out</a></li>
+      <!-- <button class="btn_menu_button" (click)="openChildModalMyprofileVideo()">MY PROFILE 1-MINUTE DEMO</button>
+      <button (click)="openChildModalMyplanVideo()" class="btn_menu_button_plan">MY PLAN 1-MINUTE DEMO</button> -->
+    </ul>
+
+    <a href="javascript:void(0)" *ngIf="dynamicmenu" (click)="mouseEnter('register')">Register <b class="fa fa-angle-down"></b></a>
+    <ul class="sub_menu_things register-sub" style="padding-left: 5px">
+      <li class="main-upper-menu"><a  href="javascript:void(0)">REGISTER</a></li>
+      <li><a  routerLink="/register" >Register as User</a></li>
+      <li><a  routerLink="/register/analyst" >Register as Analyst</a></li>
+      <button class="menu_btns btn_menu_button" (click)="childModalDifference = true">WHAT’S THE DIFFERENCE?</button>
+    </ul>
+
+    <a href="javascript:void(0)" *ngIf="dynamicmenu" (click)="mouseEnter('login')">Login <b class="fa fa-angle-down"></b></a>
+    <ul class="sub_menu_things login-sub" style="padding-left: 5px">
+      <li class="main-upper-menu"><a  href="javascript:void(0)">LOGIN</a></li>
+      <li><a  routerLink="/login" >Login as User</a></li>
+      <li><a  href="/analyst-app/login" >Login as Analyst</a></li>
+    </ul>
+
+</div>
+
+</div>
+
+
+<div bsModal #visualFeebackVideo="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" id="modal_video">
+    <div class="modal-content" style="background:transparent;border:none;">
+      <div class="modal-body" style="padding:0px;">
+         <button style="color:#fff;opacity:1;" class="close_video" aria-label="Close" (click)="closehidevisualFeebackVideo()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            <div class="wistia_responsive_padding" style="padding:56.88% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_e3ke5nn6hz seo=false videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><!-- <img src="https://fast.wistia.com/embed/medias/e3ke5nn6hz/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /> --></div></div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="popup1" class="overlay" *ngIf="childModalDifference">
+  <div class="popup">
+    <div class="close_btn" (click)="childModalDifference = false">&times;</div>
+    <div class="content" style="text-align: left;">
+      <h2>What's the difference?</h2>
+         <p>Who is an analyst? An analyst does market research, studies market conditions, evaluates past and present
+            data and from this analysis makes buying or selling recommendations for investors.
+         </p>
+         <p>Who is a user? A user is an individual investor and does market trading based on the ideas/suggestions
+            provided on this platform by the analysts for his or her personal account.
+         </p>
+    </div>
+    <!-- <div class="content">
+      <a class="continue_session" (click)="childModalDifference = false" >Continue</a><br />
+    </div>  --> 
+  </div>
+</div>
+
+
+
+
+<div id="popup1" class="overlay" *ngIf="opensitefeedback">
+  <div class="popup site_feedback">
+    <div class="close_btn" (click)="closesitefeedback()">&times;</div>
+    <h2> Site Feedback </h2>
+    <div class="content">
+      <div class="content token_pop">
+      <div class="form-group">
+        <label class="col-sm-12 label_form">NAME</label>
+        <input type="text" name="selectedTokensName" [(ngModel)]="selectedname" class="form-control label_input_feedback" >
+      </div>
+      <div class="form-group">
+        <label class="col-sm-12 label_form">EMAIL Address*</label>
+        <input type="text" name="selectedEmail" [(ngModel)]="selectedemail" class="form-control label_input_feedback" >
+      </div>
+      <div class="form-group">
+        <label class="col-sm-12 label_form">YOUR FEEDBACK *</label>
+        <textarea class="label_textarea_feedback" name="selectedFeed" [(ngModel)]="selectedFeed" class="form-control"></textarea>
+      </div>
+      <div class="form-group last_form_group">
+        <label class="valid_feedbacks" style="font-weight: normal;text-transform: initial;">All valid and qualified feedbacks will be compensated according to <a  target="_blank" href="/html/v1/legal-terms-and-conditions.html#special-offers">company's legal terms and conditions.</a></label>
+        <div class="feedback_btn_container">
+          <button class="button_input_feedback" [disabled]="!selectedemail || !selectedFeed" (click)="sendfeedback()">SEND</button>
+        </div>
+      </div>
+      <div class="wpcf7-response-output wpcf7-display-none wpcf7-mail-sent-ok" *ngIf="getSuccessMessage" style="display: block;" role="alert">Thank you for your message. It has been sent.</div>
+    </div>
+    </div>
+    
+    <div class="buttons_content">
+    </div>
+  </div>
+</div>

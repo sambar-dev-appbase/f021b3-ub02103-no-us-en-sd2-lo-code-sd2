@@ -1,0 +1,62 @@
+[
+    { "name": "Amazon.com",
+      "value": "amzn",
+      "state": false,
+      "class": "has-default checkbox"
+   }, 
+   {  "name": "Barron's",
+      "value": "bar",
+      "state": false,
+      "class": "has-default checkbox"
+   },   
+   {  "name": "Bloomberg",
+      "value": "bbg",
+      "state": false,
+      "class": "has-default checkbox"
+   },  
+   {  "name": "Bussiness Insider",
+      "value": "bi",
+      "state": false,
+      "class": "has-default checkbox"
+   }, 
+   {  "name": "CME Group",
+      "value": "cme",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {  "name": "Empower99",
+      "value": "emp",
+      "state": false,
+      "class": "has-default checkbox"
+   },   
+   {  "name": "Financial Times",
+      "value": "ft",
+      "state": false,
+      "class": "has-default checkbox"
+   },   
+   {  "name": "Forbes",
+      "value": "fbs",
+      "state": false,
+      "class": "has-default checkbox"
+   },   
+   {  "name": "Fortune",
+      "value": "fn",
+      "state": false,
+      "class": "has-default checkbox"
+   },   
+   {  "name": "Futures Magazine",
+      "value": "fm",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {  "name": "Investopedia",
+      "value": "inp",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {  "name": "InvestorPlace",
+      "value": "ip",
+      "state": false,
+      "class": "has-default checkbox"
+   }
+]

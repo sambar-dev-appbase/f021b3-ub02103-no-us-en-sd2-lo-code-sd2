@@ -1,0 +1,543 @@
+@import '../../theme/sass/auth';
+.td-logo {
+	/*background-color: #f2f2f2;*/
+	padding: 12px;
+	text-align: center;
+	margin-bottom: 5px;
+	border-radius: 100px;
+	vertical-align: middle;
+}
+.error-success-div{
+  height: 50px !important;
+  margin-bottom: 20px;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  transition: opacity 500ms;
+  visibility: visible;
+  opacity: 1;
+}
+/*.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}*/
+.close_btn {
+    position: absolute;
+    background: #2ea3f2;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    padding: 0px 0px;
+    right: -15px;
+    top: -15px;
+    font-size: 27px;
+    cursor: pointer;
+    z-index: 99;
+}
+
+
+.popup {
+  /*margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;*/
+    margin: 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup h2 {
+  /*margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;*/
+  margin-top: 0;
+  color: #333;
+  font-family: sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+    
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.login_heading{
+  font-size: 24px;
+  margin-bottom: 35px;
+}
+
+.auth-main{
+    background: url('./assets/img/login-background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100% !important;
+   }
+.auth-block {
+    background: rgba(0, 0, 0, 1) !important;
+    opacity:1;
+}
+.forgot_password_login{
+  float:right;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+.login-block{
+  width:600px !important;
+  height: 580px;
+  /*min-height: 580px !important;*/
+}
+
+.forgot-pass {
+    margin-left: 7px;
+    margin-top: 6px;
+}
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(./assets/img/loader.gif) 50% 50% no-repeat rgba(249, 249, 249, 0.5)
+}
+.alert{
+  height: 50px;
+  position: relative;
+}
+/*@media(min-width: 540px){
+    
+
+.col-sm-3 {
+    width: 20% !important;
+}
+.col-sm-9 {
+    width: 80% !important;
+}
+
+.buttons-log-in-screen {
+    margin-left: 110px;
+    z-index:999;
+}
+}*/
+/*.loginModal { color: #000; }*/
+.disclaimer-title { text-align: center; text-decoration: underline; text-underline-position: under;}
+/*.choiceBox { padding-top: 15px; padding-left: 0px; text-align: left; }*/
+.choiceBox { padding-top: 0px; padding-left: 0px; text-align: left; }
+.goToList { margin-left: 6%; float: left; } 
+
+
+.btn:hover {
+    transform: scale(1.1) !important;
+}
+.buttons-log-in-screen button {
+    margin-right: 5px;
+}
+
+/*disclaimer popup css start here*/
+.trading_disclaimer .modal-dialog {
+    width: 30%;
+    margin: 0px auto !important;
+}
+.trading_disclaimer .modal-content {
+    background-color: #fff;
+    border-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+}
+.trading_disclaimer h4.modal-title.disclaimer-title {
+    font-size: 20px;
+    color: #333 !important;
+    text-decoration: none;
+    font-weight: bold;
+}
+.trading_disclaimer p.para-text {
+    text-align: justify;
+    line-height: 22px;
+    word-spacing: 0px;
+    color: #55595c !important;
+    font-size: 15px;
+    margin-bottom: 10px !important;
+    margin-top: 12px;
+}
+.trading_disclaimer .modal-header {
+    padding: 0px;
+    border: none;
+}
+.trading_disclaimer .modal-body{
+  padding: 0px;
+}
+.trading_disclaimer .modal-footer{
+  padding: 10px 0 5px;
+  border: none;
+}
+/*.trading_disclaimer button.btn.btn-primary.confirm-btn.btn-sm.goToList{
+  background: #2ea3f2;
+  padding: 12px 25px;
+  border-radius: 5px;
+  color: #fff !important;
+  font-weight: 400;
+  cursor:pointer;
+  font-size: .9rem;
+  text-transform: uppercase;
+  float: right;
+  transition: all 0.5s ease-in-out 0s;
+}*/
+.trading_disclaimer button.btn.btn-primary.confirm-btn.btn-sm.goToList{
+    background: #2ea3f2;
+    padding: 12px 25px;
+    border-radius: 5px;
+    color: #fff !important;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: .9rem;
+    text-transform: uppercase;
+    float: none;
+    transition: all 0.5s ease-in-out 0s;
+    margin-top: 15px;
+    margin-left: 0;
+}
+.trading_disclaimer button.btn.btn-primary.confirm-btn.btn-sm.goToList:hover{
+  background: #e3e3e3 !important;
+  border-color: #e3e3e3;
+  color: #2ea3f2 !important;
+  transform: scale(1.1);
+}
+.choiceBox label {
+    color: #55595c !important;
+    font-size: 15px;
+}
+.choiceBox input {
+    position: relative;
+    top: 2px;
+    margin-right: 3px;
+}
+.col-md-5.padding-right_zero {
+    padding-right: 0;
+}
+.forgot_username_center {
+    padding-top: 15px;
+    margin-top: 5px;
+    text-align: center;
+}
+.buttons-log-in-screen{
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin-top: 10px;
+    display: inline-block;
+    width: 100%;
+}
+.offset-sm-3.col-sm-9.buttons-log-in-screen {
+    border: none;
+    margin-top: 0px;
+}
+.forgot_username_center a {
+    cursor: pointer;
+    padding: 0px 10px 0px 10px;
+    margin-left: 0px;
+    border-right: 1px solid #00abff;
+    line-height: 14px;
+}
+.forgot_username_center a:last-child {
+    border-right: none !important;
+}
+.analyst_login.col-sm-4 {
+    margin-top: 5px;
+    padding-top: 15px;
+    text-align: right;
+}
+.continue_session {
+    background: #2ea3f2;
+    padding: 12px 25px;
+    border-radius: 5px;
+    color: #fff !important;
+    cursor:pointer;
+    font-size: .9rem;
+    font-weight: 400;
+    text-transform: uppercase !important;
+    transition: all 0.5s ease-in-out 0s;
+    margin-top: 8px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+.continue_session:hover{
+  background: #e3e3e3 !important;
+  color: #2ea3f2 !important;
+  transform: scale(1.1) !important;  
+}
+.content.form_forgot_pass.form_username .form-control {
+    /*box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    color: #333;
+    display: inline-block;
+    width: 100%;
+    height: 44px;
+    padding-left: 15px;*/
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    border: 1px solid #dddd;
+    color: #333;
+    display: inline-block;
+    width: 100%;
+    height: 44px;
+    padding-left: 15px;
+    background: #f7f7f7;
+}
+.content.form_forgot_pass.form_username {
+    margin-top: 22px;
+}
+.content.form_forgot_pass.form_username .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #646464;
+}
+.content.form_forgot_pass.form_username .form-control::-moz-placeholder { /* Firefox 19+ */
+  color: #646464;
+}
+.content.form_forgot_pass.form_username .form-control:-ms-input-placeholder { /* IE 10+ */
+  color: #646464;
+}
+.content.form_forgot_pass.form_username .form-control:-moz-placeholder { /* Firefox 18- */
+  color: #646464;
+}
+
+.content.form_forgot_pass.form_username.subscription_expired {
+    margin-top: 12px;
+    padding: 0 15px;
+}
+.content.form_forgot_pass.form_username.subscription_expired .form-group label {
+    margin-bottom: 0;
+    color: #333;
+    font-weight: 400;
+    font-size: 15px;
+    padding-top: 10px;
+    text-align: left;
+    padding-right: 0;
+}
+a.view_plans_pricing {
+    text-align: left;
+    width: 100%;
+    display: inline-block;
+    color: #2ea3f2 !important;
+}
+.btn.btn-default.btn-auth.expire_submit {
+    background: #2ea3f2;
+    padding: 12px 25px;
+    border-radius: 5px;
+    color: #fff !important;
+    cursor: pointer;
+    font-size: .9rem;
+    font-weight: 400;
+    text-transform: uppercase !important;
+    transition: all 0.5s ease-in-out 0s;
+    margin-top: 4px;
+    display: inline-block;
+    float: left;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.btn.btn-default.btn-auth.expire_submit:hover{
+  background: #e3e3e3 !important;
+  color: #2ea3f2 !important;
+  transform: scale(1.1) !important;  
+}
+.content.form_forgot_pass.form_username.subscription_expired select.form-control {
+    margin-bottom: 9px !important;
+}
+
+span.inner_error {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*login page responsive start here*/
+
+@media (min-width: 1200px) and (max-width: 1600px){
+.choiceBox label {
+    font-size: 13px !important;
+}
+.trading_disclaimer .modal-dialog {
+    width: 35% !important;
+    margin: 0px auto !important;
+}
+
+
+
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1199px){
+.trading_disclaimer .modal-dialog {
+    width: 50%;
+}
+
+
+
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .trading_disclaimer .modal-dialog {
+    width: 70%;
+}
+
+}
+
+@media (max-width: 767px){
+
+.auth-main{
+    height: 100%;
+    padding: 20px;
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow-x: hidden;
+    background: none;
+}
+.auth-main .login-block {
+    width: 100% !important;
+}
+.trading_disclaimer .modal-dialog {
+    width: 100%;
+}
+.forgot_username_center a {
+    cursor: pointer;
+    padding: 0px 4px;
+    display: inline-block;
+    width: auto !important;
+}
+.forgot_username_center {
+    margin-top: 17px;
+    padding-top: 12px;
+}
+
+
+
+}
+
+
+
+@media (max-width: 480px){
+.forgot-pass{
+    margin-left: 0;
+    margin-top: 0px;
+    border: none;
+    border-radius: 4px;
+    padding: 20px 10px 0;
+    color: #00abff !important;
+    display: table;
+    width: 100%;
+    text-align: center;
+}
+.captcha_down {
+    overflow: hidden;
+    width: 95%;
+}
+.forgot_username_center a {
+    cursor: pointer;
+    padding: 0px 2px;
+    display: inline-block;
+    width: auto;
+    font-size: 12px;
+}
+.buttons-log-in-screen button.btn.btn-default {
+    padding: 5px 9px;
+    font-size: 12px;
+}
+.forgot_username_center a {
+    padding: 0px 4px 10px;
+    font-size: 13px;
+    border: none;
+}
+.forgot_username_center.col-sm-12{
+  padding: 0px;
+}
+
+
+
+
+
+
+}
+
+@media (max-width: 360px){
+  .buttons-log-in-screen button {
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+body .forgot_username_center a {
+    padding: 0px 2px !important;
+    width: auto !important;
+    font-size: 12px !important;
+}
+.buttons-log-in-screen button {
+    margin-right: 0px;
+}
+
+
+
+}
+
+
+
+@media (max-width: 320px){
+.td-logo img {
+    width: 100%;
+}
+.captcha_down {
+    overflow: hidden;
+}
+.buttons-log-in-screen button {
+    padding: 5px 7px !important;
+    border-radius: 3px;
+    font-size: 11px;
+    margin-right: -1px !important;
+}
+.buttons-log-in-screen button.btn.btn-default{
+  font-size: 11px !important;
+}
+
+}
+
+

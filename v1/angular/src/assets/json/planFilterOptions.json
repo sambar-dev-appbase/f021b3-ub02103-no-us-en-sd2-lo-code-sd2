@@ -1,0 +1,26 @@
+[
+   {
+      "name": "Basic",
+      "value": "Basic",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Silver",
+      "value": "Silver",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Gold",
+      "value": "Gold",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Platinum / Yearly",
+      "value": "Platinum",
+      "state": false,
+      "class": "has-default checkbox"
+   }
+]

@@ -1,0 +1,22 @@
+@import '../../../../sass/conf/conf';
+
+
+/*responsive css start here*/
+
+
+@media (min-width: 992px) and (max-width: 1199px){
+/*.al-sidebar{
+    z-index: 99 !important;
+}*/
+.extra-menu .credits_plan_user {
+    margin-right: 0px !important;
+}
+#primary_nav_wrap ul a {
+    padding: 10px 8px !important;
+}
+
+
+
+}
+
+

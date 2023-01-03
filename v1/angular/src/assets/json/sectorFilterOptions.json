@@ -1,0 +1,56 @@
+[
+   {
+      "name": "Interest Rates",
+      "value": "Interest-rates",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Grains",
+      "value": "Grains",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Metals",
+      "value": "Metals",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Meats",
+      "value": "Meats",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Energies",
+      "value": "Energies",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Indices",
+      "value": "Indices",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Softs",
+      "value": "Softs",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Currencies",
+      "value": "Currencies",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Crypto Assets",
+      "value": "Crypto-assets",
+      "state": false,
+      "class": "has-default checkbox"
+   }
+]

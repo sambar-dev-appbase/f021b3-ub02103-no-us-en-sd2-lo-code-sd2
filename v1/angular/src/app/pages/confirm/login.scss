@@ -1,0 +1,36 @@
+@import '../../theme/sass/auth';
+.td-logo {
+	/*background-color: #f2f2f2;*/
+	padding: 12px;
+	text-align: center;
+	margin-bottom: 33px;
+	border-radius: 100px;
+	vertical-align: middle;
+}
+.auth-main{
+    background: url('./assets/img/login-background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100% !important;
+  }
+.auth-block {
+    background: rgba(0, 0, 0, 1) !important;
+    opacity:1;
+} 
+.confirm-register{
+  text-align:center;
+  margin-bottom:35px !important;
+  margin-top: -15px;
+}
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(./assets/img/loader.gif) 50% 50% no-repeat rgba(249, 249, 249, 0.5)
+}
+.form-group label{
+    font-size:12px;
+}

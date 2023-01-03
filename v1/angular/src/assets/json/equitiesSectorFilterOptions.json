@@ -1,0 +1,71 @@
+[
+   {
+      "name": "Energy",
+      "value": "Energy",
+      "disabled": "true",
+      "state": false,
+      "class": "has-default checkbox"
+   },  {
+      "name": "Utilities",
+      "value": "Utilities",
+      "disabled": "true",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Financial",
+      "value": "Financial",
+      "disabled": "true",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Industrial",
+      "value": "Industrial",
+      "disabled": "true",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Materials",
+      "value": "Materials",
+      "disabled": "true",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Healthcare",
+      "value": "Healthcare",
+      "disabled": "true",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Technology",
+      "value": "Technology",
+      "disabled": "true",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Real Estate",
+      "value": "Real Estate",
+      "disabled": "true",
+      "state": false,
+      "class": "has-default checkbox"
+   },   
+   {
+      "name": "Consumer Staples",
+      "value": "Consumer Staples",
+      "disabled": "true",
+      "state": false,
+      "class": "has-default checkbox"
+   },
+   {
+      "name": "Consumer Discretionary",
+      "value": "Consumer Discretionary",
+      "disabled": "true",
+      "state": false,
+      "class": "has-default checkbox"
+   }
+]

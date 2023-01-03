@@ -1,0 +1,41 @@
+@import '../../sass/conf/conf';
+.showHide-sidebar { position: absolute;
+    left: 100%;
+    padding: 7px;
+    bottom: 15%;
+    background: #FFFFFF;
+    border-radius: 0px 3px 3px 0px; 
+    cursor: pointer; 
+    color: #565656; }
+
+.sbboard_menu{
+	// position: relative;
+    padding: 10px 30px;
+    // margin: 0.3125rem 1px;
+    min-width: auto;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    letter-spacing: 0;
+    background: #2ea3f2;
+    color:#fff;
+    margin-top: 10px;
+    // margin-left: 45px;
+    margin-bottom: 10px;
+    // margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    // float:left;
+}
+.sbboard_menu:hover {
+    background: #e3e3e3 !important;
+    color: #2ea3f2 !important;
+    transform: scale(1.1);
+}
+
+
+
+

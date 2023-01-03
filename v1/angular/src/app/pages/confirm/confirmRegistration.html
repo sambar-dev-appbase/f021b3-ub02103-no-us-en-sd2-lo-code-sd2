@@ -1,0 +1,37 @@
+<div class="loader" *ngIf="showLoader"></div>
+<div class="auth-main">
+  <div class="auth-block">
+    <div class="td-logo">
+        <img src="assets/img/logo.png" alt="">
+    </div>
+<form class="form-signin" method="POST" action="#" role="form">
+    <div class="form-group">
+        <h2 class="confirm-register">Confirm Registration</h2>
+    </div>
+    <div *ngIf="errorMessage!=null" class="alert alert-danger">
+        {{ errorMessage }}
+    </div>
+    <div class="form-group" *ngIf="email===null">
+        <label class="control-label" for="confirmationCode">Username</label>
+        <input id="email" type="text" maxlength="50" class="form-control"
+               [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="alert alert-success" *ngIf="successMessage!=null">{{successMessage}}</div>
+    <div class="form-group row">
+        <label  class="col-sm-3 control-label" for="confirmationCode">Verification Code</label>
+        <div class="col-sm-9">
+            <input id="confirmationCode" type="text" placeholder="Enter verification code" maxlength="50" class="form-control"
+               [(ngModel)]="confirmationCode" [ngModelOptions]="{standalone: true}">
+        </div>
+    </div><br>
+    <div class="form-group row">
+        <div class="offset-sm-3 col-sm-9 buttons-log-in-screen">
+            <button (click)="onConfirmRegistration()" [disabled]="!confirmationCode || alreadyConfirmed" id="confirmRegistration" type="submit"
+                    class="btn btn-default btn-auth">Submit
+            </button>
+            &nbsp;&nbsp;&nbsp;<button (click)="backClicked()" id="cancelbtn" type="button" class="btn btn-default btn-auth">Cancel</button>
+        </div>
+    </div>
+</form>
+  </div>
+</div>
