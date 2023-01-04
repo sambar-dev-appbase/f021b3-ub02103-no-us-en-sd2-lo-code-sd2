@@ -6,7 +6,7 @@ import { InternationalPhoneModule } from 'ng4-intl-phone';
 import { NgaModule } from '../../theme/nga.module';
 import {RegisterService} from "./register-update.service";
 import { RecaptchaModule } from 'ng2-recaptcha';
-import {UserRegistrationService, UserLoginService, UserParametersService, CognitoUtil} from "../cognito-service/cognito.service";
+//import {UserRegistrationService, UserLoginService, UserParametersService, CognitoUtil} from "../cognito-service/cognito.service";
 import { Register } from './register.component';
 import { routing }       from './register.routing';
 
@@ -26,10 +26,6 @@ import { routing }       from './register.routing';
     Register
   ],
     providers: [
-         UserRegistrationService,
-         UserLoginService,
-         UserParametersService,
-         CognitoUtil,
          RegisterService
     ]
 })
