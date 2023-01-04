@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
-import { phpApiUrl,strategyApiUrl,apiURL,userLoginApiUrl } from './pages/url.constants';
+import { strategyApiUrl,userLoginApiUrl } from './pages/url.constants';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';

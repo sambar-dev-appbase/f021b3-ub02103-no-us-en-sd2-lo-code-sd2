@@ -47,6 +47,8 @@ export class RegisterService {
    // private qldbConvertTokensURL = tokensUrl + '/convert-tokens';
    private checkInvitationCodeURL = registerApiUrl+ '/ui0209-no-us-en-sd2-lo-api/v1/api/check-user-invitation-code-0209.php';
    private setInvitationCodeURL = registerApiUrl+ '/ui0209-no-us-en-sd2-lo-api/v1/api/set-user-invitation-code-0209.php';
+   private joinUserUrl = registerApiUrl+ '/ui0209-no-us-en-sd2-lo-api/v1/api/sambar-join-now-user-invitation-code-0209.php';
+
    
    private savePayloadURL = registerApiUrl+ '/uip0212-no-us-en-sd2-lo-api/v1/api/user-payload-registration-detail-03206.php';
 
@@ -61,6 +63,22 @@ export class RegisterService {
     let options = new RequestOptions({ headers: headers });
 
     let url = this.isAuthenticatedUrl;
+    return this.http.post(url, userObj, options)
+               .map(this.extractData)
+               .catch(this.handleError);
+  }
+
+   extractData(res: Response) {
+    let body = res.json();
+    return body;
+  }
+
+  joinUser(userObj): Observable<Array<Object>> {
+    
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    let url = this.joinUserUrl;
     return this.http.post(url, userObj, options)
                .map(this.extractData)
                .catch(this.handleError);
