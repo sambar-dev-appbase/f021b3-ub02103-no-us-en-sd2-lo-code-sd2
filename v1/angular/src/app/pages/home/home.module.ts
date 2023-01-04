@@ -12,7 +12,7 @@ import { routing }       from './home.routing';
     ReactiveFormsModule,
     FormsModule,
     NgaModule,
-    routing,
+    routing
   ],
   declarations: [
     Home

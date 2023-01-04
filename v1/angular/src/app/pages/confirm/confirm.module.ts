@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 import { RegistrationConfirmationComponent } from './confirmRegistration.component';
 import { routing } from './confirmregister.routing.ts';
-import { NotificationService } from "../strategies/components/services/notification.service";
+import { NotificationService } from "../notification/notification.service";
 
 
 @NgModule({
