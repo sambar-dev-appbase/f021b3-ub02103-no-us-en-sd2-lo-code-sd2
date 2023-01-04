@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
-import { strategyApiUrl } from './pages/url.constants';
+import { strategyApiUrl,userLoginApiUrl } from './pages/url.constants';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -16,7 +16,7 @@ export class AppState {
   //private dataLogUrl = '/apis/logout.php';
   //private dataLogUrl          = strategyApiUrl + '/ua6-no-us-en-sd2-lo-api/api/get-user-logged-out.php';
   private dataLogUrl          = strategyApiUrl + '/upel0318-no-us-en-sd2-lo-api/v1/api/user-logout-user-event-log-02409.php';
-
+  private analystdataLogUrl          = strategyApiUrl + '/analyst-profile-event-log-api/api/get-user-logged-out.php';
   constructor(private http: Http) { }
 
   // already return a clone of the current state
@@ -47,6 +47,20 @@ export class AppState {
     return JSON.parse(JSON.stringify(object));
   }
 
+  checkUserIdleTime(user,usergroup, idleCounter,accessToken): Observable<Array<Object>> {
+      
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    headers.append('Authorization', 'Bearer ' + accessToken);
+    let options = new RequestOptions({ headers: headers });
+
+    var url = userLoginApiUrl + '/ua0306-no-us-en-sd2-lo-api/v1/api/get-user-idle-user-session-02403.php';
+    //var url = phpApiUrl+ '/get-user-idle.php';
+    
+    return this.http.post(url,{ username: user,usergroup: usergroup, idle: idleCounter }, options)
+             .map(this.extractStrategies)
+             .catch(this.handleError);
+    
+  }
 
 
   getUserLogoutWordpress(user,group,accessToken): Observable<Array<Object>> {
