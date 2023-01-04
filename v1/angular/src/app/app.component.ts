@@ -5,7 +5,6 @@ import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from './theme/
 import { BaThemeConfig } from './theme/theme.config';
 import { layoutPaths } from './theme/theme.constants';
 import {RegisterService} from "./pages/register/register-update.service";
-import {BrokerInformationService} from "./pages/profile/broker-information/broker-information.service";
 
 import { AppState } from "./app.service";
 
@@ -49,7 +48,6 @@ import 'style-loader!./theme/initial.scss';
     </div>
   </div>
 </div>`,
-providers: [ BrokerInformationService ]
 })
 export class App implements OnInit {
 
@@ -81,7 +79,6 @@ export class App implements OnInit {
               private viewContainerRef: ViewContainerRef,
               private themeConfig: BaThemeConfig,
               public regservice: RegisterService, 
-              public brokerService: BrokerInformationService,
               private router: Router,private route: ActivatedRoute, public appState: AppState) {
 
     themeConfig.config();
@@ -329,36 +326,6 @@ export class App implements OnInit {
        this.accesstokenvalue = accessToken;
      }
 
-
-    keepTradeITSessionAlive(accessToken) {
-
-      
-      let sessionToken = localStorage.getItem("tradeITSessionToken");
-
-      let brokerAccountInformation = JSON.parse(localStorage.getItem('brokerAccountInformation'));
-      brokerAccountInformation[0]['broker'] = localStorage.getItem('tradeITBroker');
-
-      this.brokerService.keepTadeITSessionAlive(sessionToken, accessToken)
-      .subscribe((response: any) => {
-
-        this.tradeItConnectionLog(this.username, 'tradeit-broker-connection#keepSessionAliveSuccess', brokerAccountInformation);
-        
-      }, error => {
-        
-        this.tradeItConnectionLog(this.username, 'tradeit-broker-connection#keepSessionAliveError', brokerAccountInformation);
-        // console.log( 'keepTadeITSessionAlive Error: ', error );
-      });
-    }
-
-
-    tradeItConnectionLog(username, eventType, eventDetails) {
-
-      this.brokerService.createEventLog(username, eventType, eventDetails,this.accesstokenvalue).subscribe((response: any) => {
-
-        // console.log('event log response', response);
-      })
-    }
-
     callbackWithParam(result: any) {
         
         for (let i = 0; i < result.length; i++) {
@@ -439,42 +406,6 @@ export class App implements OnInit {
        setTimeout(() => {
           window.location.href = '/';  
        }, 1000);  
-
-    }
-
-
-
-    disconnectWithBroker() {
-
-     // this.authService.getAccessToken(new AccessTokenBrokerDisconnectCallback(this));
-    }
-
-    disconnectWithBrokerForUser(accessToken) {
-
-      let sessionToken = localStorage.getItem("tradeITSessionToken");
-      
-      if ( sessionToken ) {
-        
-        this.brokerService.disconnectWithBroker(sessionToken, accessToken)
-        .subscribe((response: any) => {
-          
-          let brokerAccountInformation = JSON.parse(localStorage.getItem('brokerAccountInformation'));
-          brokerAccountInformation[0]['broker'] = localStorage.getItem('tradeITBroker');
-
-          this.tradeItConnectionLog(this.username, 'tradeit-broker-connection#disconnectedOnLogout', brokerAccountInformation);
-
-          localStorage.removeItem('brokerAccountInformation');
-          localStorage.removeItem("tradeITSessionToken");
-          localStorage.removeItem('tradeITBroker');
- 
-        }, error => {
-
-          console.log( 'disconnectWithBroker Error: ', error );
-        });
-
-        } else {
-
-        }
 
     }
 

@@ -7,17 +7,10 @@ import { Modals } from '../../../pages/ui/components/modals/modals.component';
 //import { UserDynamoDbData } from '../../../../../api/user-dynamodb-data';
 import * as moment from 'moment';
 import { ModalDirective } from 'ng2-bootstrap';
-import {LoginService} from "../../../pages/login/login.service";
-import {ProfileService} from "../../../pages/profile/profile-update.service";
-import {SubscriptionService} from "../../../pages/subscription/subscription-update.service";
 
 @Component({
   selector: 'ba-page-top',
   templateUrl: './baPageTop.html',
-  providers: [
-    ProfileService,
-    SubscriptionService
-  ]
 })
 
 export class BaPageTop {
@@ -77,7 +70,7 @@ export class BaPageTop {
   // @ViewChild('childModalForexVideo') childModalForexVideo: ModalDirective;
   @ViewChild('childModalDifference') childModalDifference: ModalDirective;
 
-  constructor(public router: Router,private _state:GlobalState,public profservice: ProfileService, public subscriptionservice: SubscriptionService, public loginService: LoginService) {
+  constructor(public router: Router,private _state:GlobalState) {
       
       this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
       this.isMenuCollapsed = isCollapsed;
@@ -140,97 +133,7 @@ export class BaPageTop {
       this.dynamicmenu = true;   
     }
 
-    // setTimeout(() => {
-    //  if(this.username && this.username != "") {
-    //    this.loginService.getDisclaimerStatusForUser(this.username, "user").subscribe(
-    //     (message: Object) => {
-    //      var showstatus = message['status'] ;
-    //      var showexpired = message['expire_value'];         
-    //       if(showstatus == 'expired' || showexpired == 'true'){
-    //        //this.router.navigate(['/logout']);
-    //        this.router.navigate(['user/subscription']);
-    //       }
-    //     }, error => { console.log('Error: ' + error); });  
-    //   }
-    // },3000);
-
-    // if(localStorage.getItem("user_plan") && localStorage.getItem("user_plan") != "") {   
-
-    //    let userobj = {plan: localStorage.getItem("user_plan"),username: this.username};
-    //    if(localStorage.getItem("user_plan") != ''){
-    //     let plan = localStorage.getItem("user_plan");
-    //     this.subscriptionservice.updateUserSubscription({
-    //          'token': localStorage.getItem('access_token'), 
-    //          'attribute' : 'custom:subscription_plan', 
-    //          'value' : plan 
-    //        }).subscribe((message: any) => {
-    //           localStorage.removeItem('user_plan');
-    //           if(message.status) {        
-    //             let result = JSON.parse(localStorage.getItem('user'));
-    //             for (let i = 0; i < result.length; i++) {          
-    //               if(result[i].Name == 'custom:subscription_plan'){
-    //                 result[i].Value = plan
-    //               }
-    //             }
-    //             localStorage.setItem('user', JSON.stringify(result));                  
-    //           }
-    //         }, error =>  {
-    //           console.log('error ', error);
-    //         });
-    //    }
-    // }
-
     
-    this.intervalcredits = setInterval(() => {
-      if(localStorage.getItem("checkCreditsChanged") == "true") {              
-          this.setUserData();
-          this.profservice.getCreditsofUser(this.username, '',this.accessTokenval)
-            .subscribe((messagecredits: any) => {
-                messagecredits = messagecredits.data;
-                this.nooftoken = (messagecredits.tokenbalance) ? messagecredits.tokenbalance : '';
-                this.noofcredits = (messagecredits.creditsbalance) ? messagecredits.creditsbalance : '';
-                this.blockedTokens1 = (messagecredits.blocked_tokens1) ? messagecredits.blocked_tokens1 : 0;
-                this.blockedTokens2 = (messagecredits.blocked_tokens2) ? messagecredits.blocked_tokens2 : 0;
-                this.blockedTokens3 = (messagecredits.blocked_tokens3) ? messagecredits.blocked_tokens3 : 0;
-
-                this.leBarAvailable = (messagecredits.lebar_avail) ? messagecredits.lebar_avail : 0;
-                this.leBarPurchase = (messagecredits.lebar_purchased) ? messagecredits.lebar_purchased : 0;
-                //this.centsTotal = (messagecredits.cents_total) ? messagecredits.cents_total : 0;
-
-                this.purpose1 = (messagecredits.purpose1) ? messagecredits.purpose1 : '';
-                this.purpose2 = (messagecredits.purpose2) ? messagecredits.purpose2 : '';
-                this.purpose3 = (messagecredits.purpose3) ? messagecredits.purpose3 : '';
-
-                this.planstringval = this.planname +', LeBar: '+this.nooftoken+', Credits: '+this.noofcredits;
-                localStorage.setItem("checkCreditsChanged", "false");
-
-                //this.getTotalLebar();
-            }, 
-            error => {  
-              localStorage.setItem("checkCreditsChanged", "false");
-              console.log('Error: ' + error); 
-            });
-              
-      }
-
-      let loginvalue = localStorage.getItem('login_val_df');
-      if(loginvalue == 'logged'){
-        this.dynamicmenu = true;
-      }else{
-       
-      }
-
-      /* Check If User is authenticated after few seconds in other tab */
-
-      if(localStorage.getItem('logoutCheck') == 'true') {
-
-        localStorage.removeItem("logoutCheck");
-        window.location.reload();
-
-      }
-
-    }, 5000);  
-
     this.setUserData();
   }
 
@@ -243,56 +146,6 @@ export class BaPageTop {
   }
 
 
-  getTotalLebar(){
-
-    this.profservice.getlebarTotal(this.username,this.accountNo,this.accessTokenval)
-    .subscribe( (message: any) => {
-
-      this.myLebarTotal = message.total;
-
-    }, error => {
-      // this.listloading = true;
-      console.log('Error: ' + JSON.stringify(error));
-    });
-
-    this.profservice.getcentsTotal(this.username,this.accountNo,this.accessTokenval)
-    .subscribe( (message: any) => {
-
-      this.centsTotal = message.total;
-
-    }, error => {
-      // this.listloading = true;
-      console.log('Error: ' + JSON.stringify(error));
-    });
-
-  }
-
-  sendfeedback(){
-
-      let userfeedObj = {name: this.selectedname, email: this.selectedemail, feed: this.selectedFeed};
-
-          this.profservice.submitFeedbackForm(userfeedObj)
-                .subscribe(
-                   (messagecredits: any) => {
-                       this.getSuccessMessage = true;
-                       // console.log('Message Coming From is ===>', messagecredits.message,' All Message is ===>', messagecredits);
-                        this.messagefeed = messagecredits.message;
-                        this.selectedname = '';
-                        this.selectedemail = '';
-                        this.selectedFeed = '';
-                       setTimeout(()=>{
-                        this.getSuccessMessage = false;
-                        this.opensitefeedback = false;
-                      }, 5000);
-                    }, 
-          error => {  
-            this.selectedname = '';
-            this.selectedemail = '';
-            this.selectedFeed = '';
-            console.log('Error: ' + error); 
-          });
-
-  }
 
   closePopup(){
     this.showScreenMsg = false;
@@ -315,93 +168,6 @@ export class BaPageTop {
   }
 
 
-  // openChildModalFutureVideo() : void{
-  //     this.childModalFutureVideo.show();
-  // }
-
-  // closehideChildModalFutureVideo() : void{
-  //     this.childModalFutureVideo.hide();
-  // }
-
-  // openChildModalResourcesVideo() : void{
-  //     this.childModalResourcesVideo.show();
-  // }
-
-  // closehideChildModalResourcesVideo() : void{
-  //     this.childModalResourcesVideo.hide();
-  // }
-
-  // openChildModalMyplanVideo() : void{
-  //     this.childModalMyplanVideo.show();
-  // }
-
-  // closehideChildModalMyplanVideo() : void{
-  //     this.childModalMyplanVideo.hide();
-  // }
-
-  // openChildModalStrategyVideo() : void{
-  //     this.childModalStrategyVideo.show();
-  // }
-
-  // closehideChildModalStrategyVideo() : void{
-  //     this.childModalStrategyVideo.hide();
-  // }
-
-  // openChildModalArticleVideo() : void{
-  //     this.childModalArticleVideo.show();
-  // }
-
-  // closehideChildModalArticleVideo() : void{
-  //     this.childModalArticleVideo.hide();
-  // }
-
-  // openChildModalMyprofileVideo() : void{
-  //     this.childModalMyprofileVideo.show();
-  // }
-
-  // closehideChildModalMyprofileVideo() : void{
-  //     this.childModalMyprofileVideo.hide();
-  // }
-
-  // openChildModalMyprofileAuthorVideo() : void{
-  //     this.childModalMyprofileAuthorVideo.show();
-  // }
-
-  // closehideChildModalMyprofileAuthorVideo() : void{
-  //     this.childModalMyprofileAuthorVideo.hide();
-  // }
-
-  // openChildModalTradeboardVideo() : void{
-  //     this.childModalTradeboardVideo.show();
-  // }
-
-  // closehideChildModalTradeboardVideo() : void{
-  //     this.childModalTradeboardVideo.hide();
-  // }
-
-  // openChildModalStocksVideo() : void{
-  //     this.childModalStocksVideo.show();
-  // }
-
-  // closehideChildModalStocksVideo() : void{
-  //     this.childModalStocksVideo.hide();
-  // }
-
-  // openChildModalEtfVideo() : void{
-  //     this.childModalEtfVideo.show();
-  // }
-
-  // closehideChildModalEtfVideo() : void{
-  //     this.childModalEtfVideo.hide();
-  // }
-
-  // openChildModalForexVideo() : void{
-  //     this.childModalForexVideo.show();
-  // }
-
-  // closehideChildModalForexVideo() : void{
-  //     this.childModalForexVideo.hide();
-  // }
 
   openChildModalDifference() : void{
       this.childModalDifference.show();
@@ -459,46 +225,6 @@ export class BaPageTop {
             this.planname = 'Basic';
           }
 
-          // this.username
-          this.profservice.getCreditsofUser(this.username, '',this.accessTokenval)
-            .subscribe((messagecredits: any) => {
-              messagecredits = messagecredits.data; 
-        
-              this.nooftoken =  (messagecredits.tokenbalance) ? messagecredits.tokenbalance : '';
-              this.noofcredits = (messagecredits.creditsbalance) ? messagecredits.creditsbalance : '';
-              this.blockedTokens1 = (messagecredits.blocked_tokens1) ? messagecredits.blocked_tokens1 : 0;
-              this.blockedTokens2 = (messagecredits.blocked_tokens2) ? messagecredits.blocked_tokens2 : 0;
-              this.blockedTokens3 = (messagecredits.blocked_tokens3) ? messagecredits.blocked_tokens3 : 0;
-
-              this.leBarAvailable = (messagecredits.lebar_avail) ? messagecredits.lebar_avail : 0;
-              this.leBarPurchase = (messagecredits.lebar_purchased) ? messagecredits.lebar_purchased : 0;
-              //this.centsTotal = (messagecredits.cents_total) ? messagecredits.cents_total : 0;
-
-
-              this.purpose1 = (messagecredits.purpose1) ? messagecredits.purpose1 : '';
-              this.purpose2 = (messagecredits.purpose2) ? messagecredits.purpose2 : '';
-              this.purpose3 = (messagecredits.purpose3) ? messagecredits.purpose3 : '';
-
-              this.planstringval = this.planname +', LeBar: '+this.nooftoken+', Credits: '+this.noofcredits;
-              this.showTokenBtn = true;
-              this.accountNo = messagecredits.account_number;
-              //this.registeredon = messagecredits.registeredon;
-              localStorage.setItem("checkCreditsChanged", "false");
-              localStorage.setItem("account_number", messagecredits.account_number);
-              //this.registeredon = moment(this.registeredon).format("MMMM Do YYYY, h:mm:ss a");
-              //this.registeredon = moment(Date.parse(this.registeredon)).format('MMMM Do YYYY, HH:mm:ss');
-              //if(this.registeredon == 'Invalid date'){
-               // this.registeredon = '';
-              //}
-              //localStorage.setItem('regsitered_date', this.registeredon);
-
-              this.getTotalLebar();
-
-            }, 
-            error => {  
-              console.log('Error: ' + error); 
-            });
-
     }
     
   }
@@ -543,38 +269,6 @@ export class BaPageTop {
             this.groupnm = 'B';
             this.planname = 'Basic';
           }
-
-
-
-         // setTimeout(() => {
-            this.profservice.getCreditsofUser(this.username, '',this.accessTokenval)
-              .subscribe((messagecredits: any) => {
-                //console.log("this4")
-                messagecredits = messagecredits.data; 
-                this.nooftoken =  (messagecredits.tokenbalance) ? messagecredits.tokenbalance : '';
-                this.noofcredits = (messagecredits.creditsbalance) ? messagecredits.creditsbalance : '';
-                this.blockedTokens1 = (messagecredits.blocked_tokens1) ? messagecredits.blocked_tokens1 : 0;
-                this.blockedTokens2 = (messagecredits.blocked_tokens2) ? messagecredits.blocked_tokens2 : 0;
-                this.blockedTokens3 = (messagecredits.blocked_tokens3) ? messagecredits.blocked_tokens3 : 0;                
-
-                this.planstringval = this.planname +', LeBar: '+this.nooftoken+', Credits: '+this.noofcredits;
-                 this.showTokenBtn = true;
-                //this.registeredon = messagecredits.registeredon;
-                localStorage.setItem("checkCreditsChanged", "false");
-                //this.registeredon = moment(this.registeredon).format("MMMM Do YYYY, h:mm:ss a");
-                //if(this.registeredon == 'Invalid date'){
-                  //this.registeredon = '';
-                //}
-                //localStorage.setItem('regsitered_date', this.registeredon);
-              }, 
-              error => {  
-                 console.log('Error: ' + error); 
-              });
-          //},1000);
-
-        //} else {
-         // this.router.navigate(['/login']);
-        //}
 
   }
   callback() {

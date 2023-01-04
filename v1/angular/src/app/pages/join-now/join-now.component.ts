@@ -1,7 +1,7 @@
 import {Component, OnInit, OnDestroy} from "@angular/core";
 import {Router, ActivatedRoute} from "@angular/router";
 import { InternationalPhoneModule } from 'ng4-intl-phone';
-import {LoginService} from "../login/login.service";
+import { RegisterService } from "../register/register-update.service";
 import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from '../../theme/services';
 import 'style-loader!./join-now.scss';
 
@@ -21,8 +21,7 @@ export class JoinNowComponent  {
     public showLoader:boolean;
     captcharesponse: string;
 
-    constructor(public router: Router,private _spinner: BaThemeSpinner,
-                public loginService: LoginService) {
+    constructor(public router: Router,private _spinner: BaThemeSpinner, public regservice: RegisterService) {
         this.errorMessage = null;
         this.errorMessage = "* Required";
 
@@ -80,7 +79,7 @@ export class JoinNowComponent  {
         } else {
 
 
-          this.loginService.joinUser({first_name: this.first_name,last_name: this.last_name, email: this.email, phone: this.phoneno, country: this.country})
+          this.regservice.joinUser({first_name: this.first_name,last_name: this.last_name, email: this.email, phone: this.phoneno, country: this.country})
           .subscribe((response: any) => {
 
             BaThemePreloader.load().then((values) => {

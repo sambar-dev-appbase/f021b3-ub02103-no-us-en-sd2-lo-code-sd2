@@ -6,7 +6,6 @@ import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from '../../th
 import { NotificationService } from "../notification/notification.service";
 
 import { RegisterService } from "../register/register-update.service";
-import { LoginService } from "../login/login.service";
 
 import 'style-loader!./login.scss';
 
@@ -46,7 +45,7 @@ export class LogoutComponent {
 @Component({
     selector: 'confirmRegistration',
     templateUrl: './confirmRegistration.html',
-    providers: [RegisterService, LoginService]
+    providers: [RegisterService]
 })
 export class RegistrationConfirmationComponent implements OnInit, OnDestroy {
     confirmationCode: string;
@@ -58,7 +57,7 @@ export class RegistrationConfirmationComponent implements OnInit, OnDestroy {
     public parameterusername: string;
     alreadyConfirmed: boolean = false;
 
-    constructor(public router: Router, private notificationService: NotificationService,public route: ActivatedRoute,private _location: Location,private _spinner: BaThemeSpinner, public regservice: RegisterService, public log_service: LoginService) {
+    constructor(public router: Router, private notificationService: NotificationService,public route: ActivatedRoute,private _location: Location,private _spinner: BaThemeSpinner, public regservice: RegisterService) {
        
     }
 
@@ -137,52 +136,59 @@ export class RegistrationConfirmationComponent implements OnInit, OnDestroy {
             if(message.status) {      
               this.successMessage = 'Verification successful. You will be redirected to Login screen.';
 
-              // login user after register
-              var cpassword = localStorage.getItem('confirm_pass');
-
-              this.log_service.login({username: this.email, password: cpassword})
-                .subscribe((message: any) => {  
-                  if(message.status) { 
-                     
-                    let messageSMS = "Welcome To SAMBAR.";                    
-                    let reg_plan = localStorage.getItem('reg_plan');
-                    
-                    //add user to qldb
-                    // this.addUserToQldb({
-                    //   name : this.email,
-                    //   address: null,
-                    //   city: null,
-                    //   state: null,
-                    //   postal_code: null,
-                    //   country : null,
-                    //   avaliable_tokens : 0
-                    // }, reg_plan, message.token);
-
-                    // enable MFA in cognito
-                    //this.enableMFA(this.email);
-                    
-                    this.sendUserNotification(this.email, messageSMS , message.token);
-                    // localStorage.setItem('a_token' , message.token);
-                    // localStorage.setItem('username', this.email);         
-                    // localStorage.removeItem('confirm_pass');
-
-                    // localStorage.setItem('a_token', message.IdToken);
-                    // localStorage.setItem('access_token', message.AccessToken);
-                    // localStorage.setItem('refresh_token', message.RefreshToken);                   
-                    // localStorage.setItem('user', JSON.stringify(message.user));
-                    // localStorage.setItem('td_login', 'true');
-
-                    setTimeout(() => {
-                      this.router.navigate(['/login']);
+              setTimeout(() => {
+                       //this.router.navigate(['/login']);
+                      window.location.href = '/ub02106/v1/login';
                     }, 1500)
 
-                  } else {
-                    this.errorMessage = message.message;
-                  }
-                }, error =>  {
-                  this.errorMessage = 'Please try again.';
-                  console.log('error ', error);
-                }); 
+              // login user after register
+              // var cpassword = localStorage.getItem('confirm_pass');
+
+              // this.log_service.login({username: this.email, password: cpassword})
+              //   .subscribe((message: any) => {  
+              //     if(message.status) { 
+                     
+              //       let messageSMS = "Welcome To SAMBAR.";                    
+              //       let reg_plan = localStorage.getItem('reg_plan');
+                    
+              //       //add user to qldb
+              //       // this.addUserToQldb({
+              //       //   name : this.email,
+              //       //   address: null,
+              //       //   city: null,
+              //       //   state: null,
+              //       //   postal_code: null,
+              //       //   country : null,
+              //       //   avaliable_tokens : 0
+              //       // }, reg_plan, message.token);
+
+              //       // enable MFA in cognito
+              //       //this.enableMFA(this.email);
+                    
+              //       this.sendUserNotification(this.email, messageSMS , message.token);
+              //       // localStorage.setItem('a_token' , message.token);
+              //       // localStorage.setItem('username', this.email);         
+              //       // localStorage.removeItem('confirm_pass');
+
+              //       // localStorage.setItem('a_token', message.IdToken);
+              //       // localStorage.setItem('access_token', message.AccessToken);
+              //       // localStorage.setItem('refresh_token', message.RefreshToken);                   
+              //       // localStorage.setItem('user', JSON.stringify(message.user));
+              //       // localStorage.setItem('td_login', 'true');
+
+              //       setTimeout(() => {
+              //         //this.router.navigate(['/login']);
+              //         window.location.href = '/ub02106/v1/login';
+              //       }, 1500)
+
+              //     } else {
+              //       this.errorMessage = message.message;
+              //     }
+              //   }, error =>  {
+              //     this.errorMessage = 'Please try again.';
+              //     console.log('error ', error);
+              //   }); 
+
 
             } else {
               this.errorMessage = message.message;
