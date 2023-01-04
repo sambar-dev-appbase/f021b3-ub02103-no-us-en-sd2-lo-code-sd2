@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import { singleTradeEventsUrl, registerNotificationApiUrl } from '../../../url.constants';
+import { registerNotificationApiUrl } from '../../../url.constants';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -8,7 +8,6 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class NotificationService {
 
-	private dataUrl = singleTradeEventsUrl;
 
 	constructor(private http: Http) { }
 
