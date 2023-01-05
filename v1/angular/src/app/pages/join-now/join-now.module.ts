@@ -8,6 +8,8 @@ import {JoinNowComponent} from "./join-now.component";
 import { routing }       from './join-now.routing';
 
 
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -21,5 +23,8 @@ import { routing }       from './join-now.routing';
   declarations: [
     JoinNowComponent
   ]
+
+
 })
 export class JoinNowModule {}
+

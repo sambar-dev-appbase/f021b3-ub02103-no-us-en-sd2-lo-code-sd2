@@ -7,7 +7,10 @@ import 'style-loader!./join-now.scss';
 
 @Component({
     selector: 'join-now',
-    templateUrl: './join-now.html'
+    templateUrl: './join-now.html',
+    providers: [ 
+      RegisterService
+  ]
 })
 export class JoinNowComponent  {
     email: string;

@@ -17,6 +17,9 @@ import 'style-loader!./theme/initial.scss';
  */
 @Component({
   selector: 'app',
+  providers: [ 
+    RegisterService
+  ],
   template: `
     <main (mousemove)="mousemove()" (keydown)="keydown()" (keypress)="keypress($event)" [ngClass]="{'menu-collapsed': isMenuCollapsed}" baThemeRun>
       <div class="additional-bg"></div>

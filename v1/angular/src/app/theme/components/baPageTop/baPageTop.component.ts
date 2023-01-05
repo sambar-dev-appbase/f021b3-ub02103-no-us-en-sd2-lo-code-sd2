@@ -137,19 +137,6 @@ export class BaPageTop {
     this.setUserData();
   }
 
-  sitefeedback(){
-    this.opensitefeedback = true;
-  }
-
-  closesitefeedback(){
-    this.opensitefeedback = false;
-  }
-
-
-
-  closePopup(){
-    this.showScreenMsg = false;
-  }
 
   // openChildModalHomeVideo() : void{
   //     this.childModalHomeVideo.show();
@@ -177,11 +164,6 @@ export class BaPageTop {
   }
 
 
-
-  logoutuser(){
-  
-     
-  }
 
   setUserData() {
      
