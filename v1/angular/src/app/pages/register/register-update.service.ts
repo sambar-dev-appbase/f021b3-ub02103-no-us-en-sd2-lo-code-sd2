@@ -19,6 +19,8 @@ export class RegisterService {
 
    private isAuthenticatedUrl = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-api/v1/api/user-authentication-user-pool-03603.php';
    private getPlansUrl = registerApiUrl + '/ua0203-no-us-en-sd2-lo-api/v1/api/get-register-plan-0203.php?username=';
+   private getCountriesUrl = registerApiUrl + '/ua0203-no-us-en-sd2-lo-api/v1/api/get-country-register-02457.php';
+   private validatephonenumberUrl = registerApiUrl + '/ua0203-no-us-en-sd2-lo-api/v1/api/check-phone-number-0203.php';
    private checkAccountNumberURL = registerApiUrl+ '/ua0203-no-us-en-sd2-lo-api/v1/api/get-user-account-number-0203.php';
    private setAccountNumberURL = registerApiUrl+ '/ua0203-no-us-en-sd2-lo-api/v1/api/set-user-account-number-0203.php';
    private uploadImageUrlReg = registerApiUrl + '/ua0203-no-us-en-sd2-lo-api/v1/api/upload-user-registration-image-03203.php';
@@ -130,7 +132,7 @@ export class RegisterService {
 
   extractStrategies(res: Response) {
 
-    console.log('res from Wordpress', res.json());
+    //console.log('res from Wordpress', res.json());
     let body = res.json();
     return body;
 
@@ -164,6 +166,24 @@ export class RegisterService {
     let options = new RequestOptions({ headers: headers });
     let url = this.getPlansUrl + username;
     return this.http.get(url, options)
+               .map(this.extractStrategies)
+               .catch(this.handleError);
+  }
+
+  getCountriesFromDynamoDb(): Observable<Array<Object>> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    let url = this.getCountriesUrl;
+    return this.http.get(url, options)
+               .map(this.extractStrategies)
+               .catch(this.handleError);
+  }
+
+  validatePhoneNumber(code,phone): Observable<Array<Object>> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    let url = this.validatephonenumberUrl;
+    return this.http.post(url,{code:code, phone: phone}, options)
                .map(this.extractStrategies)
                .catch(this.handleError);
   }

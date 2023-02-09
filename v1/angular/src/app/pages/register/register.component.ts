@@ -89,6 +89,17 @@ export class Register {
   public fileProfSelected: boolean = false;
   public fileGovSelected: boolean = false;
   public fileTaxSelected: boolean = false;
+  public leapyearval: boolean = false;
+  public yeareligibility: boolean = false;
+  public currentYear:any;
+  public currentMonth:any;
+  public currentDate:any;
+  public countrylistobj:any;
+  public countrylist:any;
+  public phonedata:any;
+  public countrycode:string = 'us';
+  public phonecode:string = '+1';
+  public phoneValid:boolean = false;
 
   constructor(public router: Router,public route: ActivatedRoute,private _spinner: BaThemeSpinner, public regservice: RegisterService,private _location: Location) {
     
@@ -119,10 +130,31 @@ export class Register {
       }
 
       this.years = [];
-      var currentYear = new Date().getFullYear() - 15;
+      var currentYear = new Date().getFullYear() - 17;
+      this.currentYear = currentYear - 1;
+      this.currentMonth = new Date().getMonth() + 1;
+      this.currentDate = new Date().getDate();
+      //if(this.currentMonth < 10) { this.currentMonth = '0'+this.currentMonth;}
       for (var i = currentYear; i > currentYear - this.totalyears; i--) {
           this.years.push(i - 1);
       }
+  }
+
+  yearchange(){
+
+    this.leapyearval = (this.registrationUser.years % 100 === 0) ? (this.registrationUser.years % 400 === 0) : (this.registrationUser.years % 4 === 0);
+    //console.log(this.leapyearval, this.registrationUser.years , this.currentYear, this.currentMonth, this.currentDate);
+
+    if(this.registrationUser.years == this.currentYear) {
+        //console.log('18 years condition', this.currentMonth);
+        this.yeareligibility = true;
+    }else{
+        this.yeareligibility = false;
+    }
+
+    this.registrationUser.month = '';
+    this.registrationUser.day = '';
+
   }
     
    public ngAfterViewInit(): void {
@@ -159,6 +191,41 @@ export class Register {
    
     }
 
+    countryChange(){
+        for (const key in this.countrylistobj) {
+            if(key == this.registrationUser.country){
+                this.countrycode = this.countrylistobj[key].substring(0, this.countrylistobj[key].indexOf("+"));
+                this.phonecode = this.countrylistobj[key].split('+')[1];
+                this.registrationUser.phone_number = '+'+this.phonecode+' ';
+            }
+        }   
+    }
+
+    phonenumberChange(){
+
+        var phone_number = this.registrationUser.phone_number.replace(/\s/g,'');
+
+        this.regservice.validatePhoneNumber(this.countrycode, phone_number).subscribe(
+            (message: any) => {
+
+                this.phonedata = message.data.NumberValidateResponse;
+
+                //console.log(this.countrycode, ' ', this.phonedata.CountryCodeIso2.toLowerCase());
+
+                if(this.countrycode == this.phonedata.CountryCodeIso2.toLowerCase() && this.phonedata.PhoneType == 'MOBILE'){
+
+                }else{
+
+                    this.phoneValid = true;
+                }
+              
+             //this.plansData = message;
+
+            },error => { console.log('Error: ' + error); 
+        });
+
+    }
+
     onInit() {
 
         this.regservice.getPlansFromDynamoDb(true).subscribe(
@@ -168,6 +235,23 @@ export class Register {
 
             },error => { console.log('Error: ' + error); 
         });
+
+
+
+        /* Get list of countries from dynamodb */
+
+        this.regservice.getCountriesFromDynamoDb().subscribe(
+            (message: any) => {
+              
+             this.countrylistobj = message;
+
+             this.countrylist = Object.keys(this.countrylistobj);
+
+             this.countrylist = this.countrylist.sort();
+
+            },error => { console.log('Error: ' + error); 
+        });
+
 
         this.registrationUser = new RegistrationUser();
         this.captcharesponse = null;
@@ -188,6 +272,7 @@ export class Register {
         this.registrationUser.agree1 = true;
         this.registrationUser.agree2 = true;
         this.registrationUser.agree3 = true;
+        this.registrationUser.phone_number = '+1 ';
 
         this.sub = this.route.params.subscribe(params => {
             this.user_type = params['usertype'];
@@ -204,15 +289,8 @@ export class Register {
             this.router.navigate(['/register']);
         });
 
-        // this.subscriptionservice.getStripeKey()
-        //   .subscribe(
-        //     (response: any) => {
-        //       this.stripePublicKey = response.STRIPE_PUBLIC_KEY;
-        //     },
-        //     error =>  {
-        //          console.log('Error: ' + JSON.stringify(error));
-        //    }); 
     }
+
     backhistory(){
        if(document.referrer == ''){
            window.location.href = '/';
@@ -492,7 +570,6 @@ export class Register {
     return !!/[\d\s]/.test(input);
    }
 
-
    grouptradeVal(value){
 
      //console.log(value);
@@ -511,6 +588,7 @@ export class Register {
 
 
         this.registrationUser.locale = this.registrationUser.address_street1;
+        this.registrationUser.phone_number = this.registrationUser.phone_number.replace(/\s/g,'');
 
         if(this.registrationUser.middle_name == ''){
 
