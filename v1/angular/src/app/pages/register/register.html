@@ -22,7 +22,7 @@
             <label class="col-sm-3 control-label" for="signupName">First Name *</label>
             <div class="col-sm-9">
             <input id="signupName" type="text"  name="first_name" placeholder="Enter your first name" maxlength="50" class="form-control"
-                   [(ngModel)]="registrationUser.first_name" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.invitationError">
+                   [(ngModel)]="registrationUser.first_name" [ngModelOptions]="{standalone: true}" [disabled]="!invitationError">
              </div>      
         </div>
         <div class="form-group row">
