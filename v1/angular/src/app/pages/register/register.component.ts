@@ -100,6 +100,7 @@ export class Register {
   public countrycode:string = 'us';
   public phonecode:string = '+1';
   public phoneValid:boolean = false;
+  public formmatedphoneNumber: string;
 
   constructor(public router: Router,public route: ActivatedRoute,private _spinner: BaThemeSpinner, public regservice: RegisterService,private _location: Location) {
     
@@ -201,11 +202,55 @@ export class Register {
         }   
     }
 
+    formatPhoneNumber(phoneNumberString) {
+
+      var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+
+      if(this.countrycode == 'ua'){
+
+        var match = cleaned.match(/^(\d{2})(\d{3})(\d{4})$/);
+        if (match) {
+           this.registrationUser.phone_number = this.phonecode + ' '+ '(' + match[1] + ') ' + match[2] + '-' + match[3];
+           //console.log(this.registrationUser.phone_number, ' formmatedphoneNumber ' ,this.formmatedphoneNumber);
+        }
+
+      }else if(this.countrycode == 'in'){
+
+        var match = cleaned.match(/^(\d{4})(\d{6})$/);
+
+        if (match) {
+           this.registrationUser.phone_number = this.phonecode + ' '+ match[1] +'-'+ match[2];
+        }
+
+      }else{
+
+          var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+          
+          if (match) {
+           this.registrationUser.phone_number = this.phonecode + ' '+ '(' + match[1] + ') ' + match[2] + '-' + match[3];
+          }
+      }
+
+      if(this.registrationUser.phone_number.substr(0,1) == '+'){
+
+      }else{
+
+        this.registrationUser.phone_number = '+'+this.registrationUser.phone_number;
+
+      }
+
+      return null;
+    }
+
     phonenumberChange(){
 
-        var phone_number = this.registrationUser.phone_number.replace(/\s/g,'');
+        var phone_number = this.registrationUser.phone_number.substring(this.registrationUser.phone_number.indexOf(' ')+1);
+        var phone_number_check = this.registrationUser.phone_number.replace(/\s/g,'');
+        this.formmatedphoneNumber = phone_number_check;
 
-        this.regservice.validatePhoneNumber(this.countrycode, phone_number).subscribe(
+        this.formatPhoneNumber(phone_number);
+
+        this.regservice.validatePhoneNumber(this.countrycode, phone_number_check).subscribe(
             (message: any) => {
 
                 this.phonedata = message.data.NumberValidateResponse;
@@ -588,7 +633,8 @@ export class Register {
 
 
         this.registrationUser.locale = this.registrationUser.address_street1;
-        this.registrationUser.phone_number = this.registrationUser.phone_number.replace(/\s/g,'');
+        //this.registrationUser.phone_number = this.registrationUser.phone_number.replace(/\s/g,'');
+        this.registrationUser.phone_number = this.formmatedphoneNumber;
 
         if(this.registrationUser.middle_name == ''){
 

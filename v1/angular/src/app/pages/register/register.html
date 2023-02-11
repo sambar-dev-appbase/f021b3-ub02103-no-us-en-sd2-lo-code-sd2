@@ -22,35 +22,35 @@
             <label class="col-sm-3 control-label" for="signupName">First Name *</label>
             <div class="col-sm-9">
             <input id="signupName" type="text"  name="first_name" placeholder="Enter your first name" maxlength="50" class="form-control"
-                   [(ngModel)]="registrationUser.first_name" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.first_name" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.invitationError">
              </div>      
         </div>
         <div class="form-group row">
             <label class="col-sm-3 control-label" for="signupMiddleName">Middle Name</label>
             <div class="col-sm-9">
             <input id="signupMiddleName" type="text"  name="middle_name" placeholder="Enter your middle name" maxlength="50" class="form-control"
-                   [(ngModel)]="registrationUser.middle_name" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.middle_name" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.first_name ? '' : null">
              </div>      
         </div>
         <div class="form-group row">
             <label class="col-sm-3 control-label" for="signupLastName">Last Name *</label>
             <div class="col-sm-9">
             <input id="signupLastName" type="text"  name="last_name" placeholder="Enter your last name" maxlength="50" class="form-control"
-                   [(ngModel)]="registrationUser.last_name" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.last_name" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.middle_name ? '' : null">
              </div>      
         </div>
         <div class="form-group row">
             <label class="col-sm-3 control-label" for="signupEmail">Email *</label>
           <div class="col-sm-9">
             <input id="signupEmail" type="email"  name="email" placeholder="Enter your email address" maxlength="50" class="form-control"
-                   [(ngModel)]="registrationUser.email" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.email" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.last_name ? '' : null">
           </div>
         </div>
          
         <div class="form-group row">
             <label class="col-sm-3 control-label" for="signupEmail">Gender *</label>
           <div class="col-sm-9">
-           <select class="form-control"  name="gender" name="gender" [(ngModel)]="registrationUser.gender" [ngModelOptions]="{standalone: true}">
+           <select class="form-control"  name="gender" name="gender" [(ngModel)]="registrationUser.gender" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.email ? '' : null">
             <option  value="Male">Male</option>
             <option  value="Female">Female</option>
             <option  value="Other">Other</option>
@@ -63,18 +63,18 @@
             <label class="col-sm-3 control-label" for="address_street1">Street Address / Number *</label>
           <div class="col-sm-6">
             <input id="address_street1" type="text" maxlength="50"  placeholder="Street Address" class="form-control"
-                   [(ngModel)]="registrationUser.address_street1" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.address_street1" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.email ? '' : null">
           </div>
           <div class="col-sm-3">
             <input id="signunumber" type="text" maxlength="50"  placeholder="Enter Number" class="form-control"
-                   [(ngModel)]="registrationUser.street_number" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.street_number" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.address_street1 ? '' : null">
           </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-3 control-label" for="address_street2">Street Address 2</label>
           <div class="col-sm-9">
             <input id="address_street2" type="text" maxlength="50"  placeholder="Street Address" class="form-control"
-                   [(ngModel)]="registrationUser.address_street2" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.address_street2" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.street_number ? '' : null">
           </div>
         </div>
 
@@ -82,11 +82,11 @@
             <label class="col-sm-3 control-label" for="postal_code">Postal Code / City *</label>
           <div class="col-sm-4">
             <input id="postal_code" type="text" maxlength="50"  placeholder="Postal Code" class="form-control"
-                   [(ngModel)]="registrationUser.postal_code" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.postal_code" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.address_street2 ? '' : null">
           </div>
           <div class="col-sm-5">
             <input id="signucity" type="text" maxlength="50"  placeholder="City" class="form-control"
-                   [(ngModel)]="registrationUser.city" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.city" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.postal_code ? '' : null">
           </div>
         </div>
 
@@ -94,7 +94,7 @@
             <label class="col-sm-3 control-label" for="signupState">State / Country *</label>
           <div class="col-sm-4">
             <input id="signupState" type="text" maxlength="50"  placeholder="State" class="form-control"
-                   [(ngModel)]="registrationUser.state" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.state" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.city ? '' : null">
           </div>
           <div class="col-sm-5">
             <select class="form-control" id="signupCountry" name="country" [(ngModel)]="registrationUser.country" (change)="countryChange($event)">
@@ -108,13 +108,13 @@
         <div class="form-group row">
             <label class="col-sm-3 control-label" for="signupName">Country of Citizenship*</label>
             <div class="col-sm-4">
-              <select class="form-control" id="country_citizenship" name="country_citizenship" [(ngModel)]="registrationUser.country_citizenship">
+              <select class="form-control" id="country_citizenship" name="country_citizenship" [(ngModel)]="registrationUser.country_citizenship" [attr.disabled]="!registrationUser.state ? '' : null">
                  <option value="">Select Country</option>
                  <option *ngFor="let countVal of countrylist" [value]="countVal">{{ countVal }}</option>
               </select>
              </div>    
              <div class="col-sm-5">
-                <select class="form-control" id="country_citizenship2" name="country_citizenship2" [(ngModel)]="registrationUser.country_citizenship2">
+                <select class="form-control" id="country_citizenship2" name="country_citizenship2" [(ngModel)]="registrationUser.country_citizenship2" [attr.disabled]="!registrationUser.country_citizenship ? '' : null">
                  <option value="">Are you a dual citizen?</option>
                  <option value="No">No</option>
                  <option *ngFor="let countVal of countrylist" [value]="countVal">{{ countVal }}</option>
@@ -126,14 +126,14 @@
             <label class="col-sm-3 control-label" for="prm_resident">Permanent Residency * <span tooltip="Enter Permanent Residency" class="tooltip-parent">
                     <i class="fa fa-info-circle"></i></span></label>
             <div class="col-sm-4">
-                <select class="form-control"  name="permanent_resident1"  [(ngModel)]="registrationUser.permanent_resident1" [ngModelOptions]="{standalone: true}">
+                <select class="form-control"  name="permanent_resident1"  [(ngModel)]="registrationUser.permanent_resident1" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.country_citizenship2 ? '' : null">
                      <option value="">Select One</option>
                      <option value="None">None</option>
                      <option *ngFor="let countVal of countrylist" [value]="countVal">{{ countVal }}</option>
               </select>
             </div>
             <div class="col-sm-5">
-                <select class="form-control"  name="permanent_resident2"  [(ngModel)]="registrationUser.permanent_resident2" [ngModelOptions]="{standalone: true}">
+                <select class="form-control"  name="permanent_resident2"  [(ngModel)]="registrationUser.permanent_resident2" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.permanent_resident1 ? '' : null">
                      <option value="">Select One</option>
                      <option value="None">None</option>
                      <option *ngFor="let countVal of countrylist" [value]="countVal">{{ countVal }}</option>
@@ -142,15 +142,21 @@
         </div>
 
         <div class="form-group row">
-            <label class="col-sm-3 control-label" for="signupEmail">Phone No. *</label>
-          <div class="col-sm-9 phone_space">
+            <label class="col-sm-3 control-label" for="signupEmail">Mobile No. *</label>
+          <div class="col-sm-5 phone_space">
 
                    <!-- <int-phone-prefix [defaultCountry]="countrycode" [locale]="countrycode" name="phone_number" [(ngModel)]="registrationUser.phone_number" type="number" [required]="true" maxlength="13"></int-phone-prefix> -->
 
-                   <input id="phone_number"  type="text" maxlength="15"  class="form-control"
+                   <input id="phone_number"   type="text" maxlength="15"  class="form-control"
                    [(ngModel)]="registrationUser.phone_number"  (change)="phonenumberChange()" [ngModelOptions]="{standalone: true}">
 
           </div>
+          <div class="col-sm-4" style="margin-top:10px;">
+
+            <a href="#" target="_blank">Why Mobile?</a>
+
+          </div>
+          
         </div>
         
         <!-- UB05F Html Code -->
@@ -160,7 +166,7 @@
             <div class="col-sm-9" id="password_tooltip">
             <span class="tooltiptext">Cannot use special characters (!@#$%^&*()) and blank space in username</span>
             <input id="signupUserName" (keypress)="omit_special_char($event)" type="text" maxlength="15"  placeholder="Pick an username" class="form-control"
-                   [(ngModel)]="registrationUser.username" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.username" [attr.disabled]="!registrationUser.phone_number ? '' : null" [ngModelOptions]="{standalone: true}">
             </div>       
         </div>
 
@@ -172,7 +178,7 @@
               <span class="tooltiptext">Min. 8 characters (at least 1 number, 1 lowercase, 1 uppercase, 1 special character)</span>
               <input id="signupPassword" type="password"  maxlength="25" class="form-control"
                    placeholder="Min. 8 characters (at least 1 number, 1 LC, 1 UC, 1 special character)"  length="40" [(ngModel)]="registrationUser.password"
-                   [ngModelOptions]="{standalone: true}">
+                   [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.username ? '' : null">
             </div>       
         </div>
         <div class="form-group row">
@@ -181,7 +187,7 @@
               <span class="tooltiptext">Min. 8 characters (at least 1 number, 1 lowercase, 1 uppercase, 1 special character)</span>
               <input id="signupConfirmPassword" type="password"  maxlength="25" class="form-control"
                    placeholder="Enter same password"  length="40" [(ngModel)]="registrationUser.confirmpassword"
-                   [ngModelOptions]="{standalone: true}">
+                   [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.password ? '' : null">
             </div>       
         </div>
         
@@ -190,13 +196,13 @@
             <div class="col-sm-9">
             <div class="row">
                 <div class="col-sm-4">
-                    <select style="font-family: sans-serif;" class="form-control"  name="years" [(ngModel)]="registrationUser.years"  [ngModelOptions]="{standalone: true}" (change)="yearchange($event)">
+                    <select style="font-family: sans-serif;" class="form-control"  name="years" [(ngModel)]="registrationUser.years"  [ngModelOptions]="{standalone: true}" (change)="yearchange($event)" [attr.disabled]="!registrationUser.confirmpassword ? '' : null">
                         <option value="">Select Year</option>
                         <option *ngFor='let yrVal of years; trackBy: index;' [value]="yrVal">{{ yrVal }}</option>
                     </select>
                 </div>
                 <div class="col-sm-4">
-                    <select style="font-family: sans-serif;" class="form-control" name="month" [(ngModel)]="registrationUser.month"  [ngModelOptions]="{standalone: true}" *ngIf="yeareligibility">
+                    <select style="font-family: sans-serif;" class="form-control" name="month" [(ngModel)]="registrationUser.month"  [ngModelOptions]="{standalone: true}" *ngIf="yeareligibility" [attr.disabled]="!registrationUser.years ? '' : null">
                         <option value="">Select Month</option>            
                         <option value="01" *ngIf="currentMonth >= 1">January</option>            
                         <option value="02" *ngIf="currentMonth >= 2">February</option>            
@@ -211,7 +217,7 @@
                         <option value="11" *ngIf="currentMonth >= 11">November</option>            
                         <option value="12" *ngIf="currentMonth >= 12">December</option>            
                     </select>
-                    <select style="font-family: sans-serif;" class="form-control" name="month" [(ngModel)]="registrationUser.month"  [ngModelOptions]="{standalone: true}" *ngIf="!yeareligibility">
+                    <select style="font-family: sans-serif;" class="form-control" name="month" [(ngModel)]="registrationUser.month"  [ngModelOptions]="{standalone: true}" *ngIf="!yeareligibility" [attr.disabled]="!registrationUser.years ? '' : null">
                         <option value="">Select Month</option>            
                         <option value="01">January</option>            
                         <option value="02">February</option>            
@@ -228,7 +234,7 @@
                     </select>
                 </div>
                 <div class="col-sm-4">
-                    <select style="font-family: sans-serif;" class="form-control" name="day" [(ngModel)]="registrationUser.day"  [ngModelOptions]="{standalone: true}" *ngIf="!yeareligibility">
+                    <select style="font-family: sans-serif;" class="form-control" name="day" [(ngModel)]="registrationUser.day"  [ngModelOptions]="{standalone: true}" *ngIf="!yeareligibility" [attr.disabled]="!registrationUser.month ? '' : null">
                         <option value="">Select Day</option>
                         <option value="01">01</option>
                         <option value="02">02</option>
@@ -263,7 +269,7 @@
                         <option value="31" *ngIf="registrationUser.month == '01' || registrationUser.month == '03' || registrationUser.month == '05' || registrationUser.month == '07' || registrationUser.month == '08' || registrationUser.month == '10' || registrationUser.month == '12' ">31</option>
                     </select>
 
-                    <select style="font-family: sans-serif;" class="form-control" name="day" [(ngModel)]="registrationUser.day"  [ngModelOptions]="{standalone: true}" *ngIf="yeareligibility">
+                    <select style="font-family: sans-serif;" class="form-control" name="day" [(ngModel)]="registrationUser.day"  [ngModelOptions]="{standalone: true}" *ngIf="yeareligibility" [attr.disabled]="!registrationUser.month ? '' : null">
                         <option value="">Select Day</option>
                         <option value="01" *ngIf="currentDate >= 1">01</option>
                         <option value="02" *ngIf="currentDate >= 2">02</option>
@@ -326,7 +332,7 @@
             <label class="col-sm-3 control-label" for="signupTaxId">TAX ID *</label>
             <div class="col-sm-5">
             <input id="taxId" type="text" name="taxId" placeholder="Enter your Tax ID Number" maxlength="16" class="form-control"
-                   [(ngModel)]="registrationUser.taxId" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.taxId" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.day ? '' : null">
              </div>      
              <div class="col-sm-4" style="margin-top: 10px;"><a target="_blank" href="/html/v1/taxid-info.html">What is TAX ID?</a></div>
         </div>
@@ -350,7 +356,7 @@
             <label class="col-sm-3 control-label" for="signupTaxId">Government ID *</label>
             <div class="col-sm-5">
             <input id="govId" type="text" name="govId" placeholder="Enter your Government ID Number" maxlength="16" class="form-control"
-                   [(ngModel)]="registrationUser.govId" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.govId" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.taxId ? '' : null">
              </div>  
              <div class="col-sm-4" style="margin-top: 10px;"><a target="_blank" href="/html/v1/taxid-info.html">What is Government ID?</a></div>    
         </div>
@@ -374,23 +380,14 @@
         <div class="form-group row">
             <label class="col-sm-3 control-label" for="signupPassword2">Plan *</label>
             <div class="col-sm-5 select_plans" *ngIf="planbaseduser == 'true' ">
-              <select [(ngModel)]="registrationUser.subscription" [ngModelOptions]="{standalone: true}" class="form-control" *ngIf="plansData">
+              <select [(ngModel)]="registrationUser.subscription" [ngModelOptions]="{standalone: true}" class="form-control" *ngIf="plansData" [attr.disabled]="!registrationUser.govId ? '' : null">
                 <option value="basic">Basic - {{plansData.price_total_basic}} LeBar per Month</option>
                 <option value="silver" >Silver - {{plansData.price_total_silver}} LeBar per Month</option>
                 <option value="gold" >Gold - {{plansData.price_total_gold}} LeBar per Month</option>
                 <option value="platinum" >Platinum - {{plansData.price_total_platinum}} LeBar per Month</option>
                 <option value="yearly" >Yearly - {{plansData.price_total_yearly}} LeBar per Month</option>
-              </select>
-
-              <select [(ngModel)]="registrationUser.subscription" [ngModelOptions]="{standalone: true}" class="form-control" *ngIf="!plansData">
-                <option value="basic">Basic - 5 LeBar per Month</option>
-                <option value="silver">Silver - 99 LeBar per Month</option>
-                <option value="gold">Gold - 149 LeBar per Month</option>
-                <option value="platinum">Platinum - 199 LeBar per Month</option>
-                <option value="yearly">Yearly - 1999 LeBar per Month</option>
-              </select>
-              
-              
+              </select>              
+               
             </div> 
             <div class="col-sm-4"><a class="view_plans_price" href="/html/v1/subscription-plans.html" target="_blank">Plans and Pricing</a></div>     
         </div>
@@ -439,10 +436,10 @@
   <div class="popup">
     <div class="close_btn ap_close_btn" (click)="phoneValid = false;">&times;</div>
     <div class="content">
-      Virtual or Landlines phone numbers are not allowed. Enter a valid Mobile number.
+      Virtual/Landlines not allowed. Enter a valid Mobile number.
     </div>
     <div class="content">
-      <a class="continue_session" target="_blank" href="#" >Why Mobile?</a>
+      <a class="continue_session" (click)="phoneValid = false;" >Continue</a>
     </div>  
   </div>
 </div>
