@@ -3,7 +3,7 @@
   <div class="td-logo"> 
     <a href="/"><img alt="Sambar" src="assets/img/sambar2.PNG" height="60"></a>
   </div>
-    <h1 class="register_heading" id="pageTop">{{register_title}} <span class="one_acc_user">(Only one account allowed per person.)</span></h1>
+    <h1 class="register_heading" id="pageTop">{{register_title}} <span class="one_acc_user">(One account per person.)</span></h1>
     <form class="form-signin" method="POST" action="#" role="form">
         <div *ngIf="errorMessage!=null" class="alert alert-danger">
             {{ errorMessage }}
@@ -36,7 +36,7 @@
             <label class="col-sm-3 control-label" for="signupLastName">Last Name *</label>
             <div class="col-sm-9">
             <input id="signupLastName" type="text"  name="last_name" placeholder="Enter your last name" maxlength="50" class="form-control"
-                   [(ngModel)]="registrationUser.last_name" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.middle_name ? '' : null">
+                   [(ngModel)]="registrationUser.last_name" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.first_name ? '' : null">
              </div>      
         </div>
         <div class="form-group row">
@@ -82,7 +82,7 @@
             <label class="col-sm-3 control-label" for="postal_code">Postal Code / City *</label>
           <div class="col-sm-4">
             <input id="postal_code" type="text" maxlength="50"  placeholder="Postal Code" class="form-control"
-                   [(ngModel)]="registrationUser.postal_code" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.address_street2 ? '' : null">
+                   [(ngModel)]="registrationUser.postal_code" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.address_street1 ? '' : null">
           </div>
           <div class="col-sm-5">
             <input id="signucity" type="text" maxlength="50"  placeholder="City" class="form-control"
@@ -97,7 +97,7 @@
                    [(ngModel)]="registrationUser.state" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.city ? '' : null">
           </div>
           <div class="col-sm-5">
-            <select class="form-control" id="signupCountry" name="country" [(ngModel)]="registrationUser.country" (change)="countryChange($event)">
+            <select class="form-control" id="signupCountry" name="country" [(ngModel)]="registrationUser.country" (change)="countryChange($event)" [attr.disabled]="!registrationUser.state ? '' : null">
                  <option value="">Select Country</option>
                  <option value="United States of America">United States of America</option>
                  <option *ngFor="let countVal of countrylist" [value]="countVal" >{{ countVal }}</option>
@@ -148,7 +148,7 @@
                    <!-- <int-phone-prefix [defaultCountry]="countrycode" [locale]="countrycode" name="phone_number" [(ngModel)]="registrationUser.phone_number" type="number" [required]="true" maxlength="13"></int-phone-prefix> -->
 
                    <input id="phone_number"   type="text" maxlength="15"  class="form-control"
-                   [(ngModel)]="registrationUser.phone_number"  (change)="phonenumberChange()" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.phone_number"  (change)="phonenumberChange()" [ngModelOptions]="{standalone: true}" [attr.disabled]="!registrationUser.permanent_resident2 ? '' : null">
 
           </div>
           <div class="col-sm-4" style="margin-top:10px;">
@@ -160,13 +160,12 @@
         </div>
         
         <!-- UB05F Html Code -->
-
         <div class="form-group row">
             <label class="col-sm-3 control-label" for="signupName">Username *</label>
             <div class="col-sm-9" id="password_tooltip">
             <span class="tooltiptext">Cannot use special characters (!@#$%^&*()) and blank space in username</span>
             <input id="signupUserName" (keypress)="omit_special_char($event)" type="text" maxlength="15"  placeholder="Pick an username" class="form-control"
-                   [(ngModel)]="registrationUser.username" [attr.disabled]="!registrationUser.phone_number ? '' : null" [ngModelOptions]="{standalone: true}">
+                   [(ngModel)]="registrationUser.username" [disabled]="phoneValidError || registrationUser.phone_number.length < 11" [ngModelOptions]="{standalone: true}">
             </div>       
         </div>
 
@@ -321,7 +320,7 @@
             <div id="imageDiv" class="">
               <div class="fileUpload btn btn-primary">
                   <span class="choose_profileID">Choose File </span>
-                  <input id="uploadBtn" type="file" accept="image/jpeg, image/png, image/jpg" class="upload" (change)="fileChangeEvent($event)" [attr.disabled]="!registrationUser.username ? '' : null">
+                  <input id="uploadBtn" type="file" accept="image/jpeg, image/png, image/jpg" class="upload" (change)="fileChangeEvent($event)" [attr.disabled]="!registrationUser.username ? '' : null && !registrationUser.day">
               </div>
               <span id="uploadFile" placeholder="No File Chosen" >No File Choosen</span>
             </div>
@@ -345,7 +344,7 @@
             <div id="imageDivTaxIdProof" class="">
               <div class="fileUpload btn btn-primary">
                   <span class="choose_fileTaxID">Choose File </span>
-                  <input id="uploadBtn2" type="file" accept="image/jpeg, image/png, image/jpg" class="upload" (change)="fileTAXIDChangeEvent($event)" [attr.disabled]="!registrationUser.username ? '' : null">
+                  <input id="uploadBtn2" type="file" accept="image/jpeg, image/png, image/jpg" class="upload" (change)="fileTAXIDChangeEvent($event)" [attr.disabled]="!registrationUser.username ? '' : null && !registrationUser.taxId">
               </div>
               <span id="uploadFileTAXID" placeholder="No File Chosen" >No File Choosen</span>
             </div>
@@ -370,7 +369,7 @@
             <div id="imageDivIdProof" class="">
               <div class="fileUpload btn btn-primary">
                   <span class="choose_fileID">Choose File </span>
-                  <input id="uploadBtn3" type="file" accept="image/jpeg, image/png, image/jpg" class="upload" (change)="fileIDChangeEvent($event)" [attr.disabled]="!registrationUser.username ? '' : null">
+                  <input id="uploadBtn3" type="file" accept="image/jpeg, image/png, image/jpg" class="upload" (change)="fileIDChangeEvent($event)" [attr.disabled]="!registrationUser.username ? '' : null &&  !registrationUser.govId">
               </div>
               <span id="uploadFileID" placeholder="No File Chosen" >No File Choosen</span>
             </div>
@@ -386,7 +385,10 @@
                 <option value="gold" >Gold - {{plansData.price_total_gold}} LeBar per Month</option>
                 <option value="platinum" >Platinum - {{plansData.price_total_platinum}} LeBar per Month</option>
                 <option value="yearly" >Yearly - {{plansData.price_total_yearly}} LeBar per Month</option>
-              </select>              
+              </select>  
+              <select [(ngModel)]="registrationUser.subscription" [ngModelOptions]="{standalone: true}" class="form-control" *ngIf="!plansData">
+                <option value="">Not available</option>
+              </select>            
                
             </div> 
             <div class="col-sm-4"><a class="view_plans_price" href="/html/v1/subscription-plans.html" target="_blank">Plans and Pricing</a></div>     
@@ -407,9 +409,8 @@
     
         <br>
         <div class="form-group row">
-
           <div class="offset-sm-3 col-sm-9 buttons-login-screen">
-            <button *ngIf="user_type != 'analyst'" [disabled]="!invitationError || !registrationUser.first_name || !registrationUser.last_name || !registrationUser.street_number ||!registrationUser.address_street1 ||!registrationUser.postal_code ||!registrationUser.city ||!registrationUser.state ||!registrationUser.country ||!registrationUser.group_trade || !registrationUser.gender || !registrationUser.invitation || !registrationUser.phone_number || !registrationUser.username || !registrationUser.password || !registrationUser.confirmpassword || !registrationUser.agree || !captcharesponse" (click)="onRegister()"  id="signupSubmit" type="submit" class="btn btn-default btn-auth">
+            <button *ngIf="user_type != 'analyst'" [disabled]="!invitationError || phoneValidError || !registrationUser.first_name || !registrationUser.last_name || !registrationUser.street_number ||!registrationUser.address_street1 ||!registrationUser.permanent_resident1 ||!registrationUser.permanent_resident2 ||!registrationUser.postal_code ||!registrationUser.city ||!registrationUser.state ||!registrationUser.country ||!registrationUser.group_trade || !registrationUser.gender || !registrationUser.invitation || !registrationUser.phone_number || !registrationUser.username || !registrationUser.password || !registrationUser.confirmpassword || !registrationUser.agree || !captcharesponse" (click)="onRegister()"  id="signupSubmit" type="submit" class="btn btn-default btn-auth">
                 Register
             </button>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a (click)="backhistory()"><button type="button" class="btn btn-default btn-auth">Cancel</button></a>

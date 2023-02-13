@@ -100,6 +100,7 @@ export class Register {
   public countrycode:string = 'us';
   public phonecode:string = '+1';
   public phoneValid:boolean = false;
+  public phoneValidError:boolean = false;
   public formmatedphoneNumber: string;
 
   constructor(public router: Router,public route: ActivatedRoute,private _spinner: BaThemeSpinner, public regservice: RegisterService,private _location: Location) {
@@ -258,11 +259,17 @@ export class Register {
                 //console.log(this.countrycode, ' ', this.phonedata.CountryCodeIso2.toLowerCase());
 
                 if(this.countrycode == this.phonedata.CountryCodeIso2.toLowerCase() && this.phonedata.PhoneType == 'MOBILE'){
+                    this.phoneValidError = false;
+                    this.phoneValid = false;
 
                 }else{
 
                     this.phoneValid = true;
+                    this.phoneValidError = true;
+                    //console.log('In Else Page');
                 }
+
+                //console.log(this.phoneValid);
               
              //this.plansData = message;
 

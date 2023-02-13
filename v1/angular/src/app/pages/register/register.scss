@@ -124,6 +124,16 @@ select.form-control{
     transform: none !important;
 }
 
+.col-sm-9.fileUpload.upload:disabled {
+    cursor: not-allowed !important;
+}
+
+.fileUpload input.upload:disabled
+{
+    cursor: not-allowed !important;
+    transform:none;
+}
+
 .fileUpload {
     position: relative;
     overflow: hidden;
