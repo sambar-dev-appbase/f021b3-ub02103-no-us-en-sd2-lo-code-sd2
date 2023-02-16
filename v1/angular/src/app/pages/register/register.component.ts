@@ -866,21 +866,23 @@ export class Register {
                   } else {                   
                     this.errorMessage = null;
 
-                    this.regservice.checkPhoneNumber(this.registrationUser.phone_number)
-                      .subscribe((message: any) => { 
+                    // Commented Phone number check
+
+                    // this.regservice.checkPhoneNumber(this.registrationUser.phone_number)
+                    //   .subscribe((message: any) => { 
 
                         //console.log('Checking Phone');
-                        if(message && message.status) {
+                        // if(message && message.status) {
 
-                          //console.log('Message ',message.message);
-                          this.errorMessage = message.message;
-                          BaThemePreloader.load().then((values) => {
-                            this._spinner.hide();
-                         });
-                          $("html, body").animate({ scrollTop: $('#pageTop').offset().top }, 500);
-                          return false;
-                        } else {                   
-                          this.errorMessage = null;
+                        //   //console.log('Message ',message.message);
+                        //   this.errorMessage = message.message;
+                        //   BaThemePreloader.load().then((values) => {
+                        //     this._spinner.hide();
+                        //  });
+                        //   $("html, body").animate({ scrollTop: $('#pageTop').offset().top }, 500);
+                        //   return false;
+                        //} else {                   
+                          //this.errorMessage = null;
 
                            // check invitation code
                           this.regservice.checkInvitationCode(this.registrationUser.invitation)
@@ -941,10 +943,10 @@ export class Register {
                               console.log('error ', error);
                             });    
 
-                        }
-                        }, error =>  {
-                        console.log('error ', error);
-                      });                
+                        //}
+                      //   }, error =>  {
+                      //   console.log('error ', error);
+                      // });                
                   }
                 }, error =>  {
                   console.log('error ', error);
