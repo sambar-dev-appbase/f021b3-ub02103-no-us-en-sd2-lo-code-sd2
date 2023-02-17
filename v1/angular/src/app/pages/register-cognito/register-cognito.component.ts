@@ -662,21 +662,23 @@ export class RegisterCognito {
 
           this.registrationUser.username = this.registrationUser.username.toLowerCase();
 
-         this.regservice.checkPhoneNumber(this.registrationUser.phone_number)
-          .subscribe((message: any) => { 
+          // Commented Phone number check
+
+         // this.regservice.checkPhoneNumber(this.registrationUser.phone_number)
+         // .subscribe((message: any) => { 
 
             //console.log('Checking Phone');
-            if(message && message.status) {
+         //   if(message && message.status) {
 
               //console.log('Message ',message.message);
-              this.errorMessage = message.message;
-              BaThemePreloader.load().then((values) => {
-                this._spinner.hide();
-             });
-              $("html, body").animate({ scrollTop: $('#pageTop').offset().top }, 500);
-              return false;
+         //     this.errorMessage = message.message;
+         //     BaThemePreloader.load().then((values) => {
+         //       this._spinner.hide();
+         //    });
+         //     $("html, body").animate({ scrollTop: $('#pageTop').offset().top }, 500);
+         //     return false;
 
-          }else{
+         // }else{
 
 
               this.regservice.register(this.registrationUser).subscribe((message: any) => {                         
