@@ -17,11 +17,12 @@ export class NotificationService {
 
     var url = registerNotificationApiUrl+'/usn0215-no-us-en-sd2-lo-api/v1/api/send-notification-0215.php';
 
-    let headers = new Headers();
+    let headers = new Headers({ 'Content-Type': 'application/json;' });
+    let options = new RequestOptions({ headers: headers });
     // headers.append('Access-Control-Request-Method', '*');
     // headers.append('accept', 'application/json');
     // headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', 'Bearer ' + accessToken);
+    //headers.append('Authorization', 'Bearer ' + accessToken);
 
     let options = new RequestOptions({ headers: headers });
 
