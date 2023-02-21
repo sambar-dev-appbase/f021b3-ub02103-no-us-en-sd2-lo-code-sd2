@@ -127,11 +127,11 @@ export class RegistrationConfirmationComponent implements OnInit, OnDestroy {
     //         });
     // }
 
-     onConfirmRegistration() {
+    onConfirmRegistration() {
         this.errorMessage = null;
         let self = this;
         this.confirmationCode = this.confirmationCode.replace(/\s/g,'');
-        this.log_service.confirmUser({username: this.email, confirmation: this.confirmationCode})
+        this.regservice.confirmRegister({username: this.email, confirmation: this.confirmationCode})
           .subscribe((message: any) => {  
             if(message.status) {      
               this.successMessage = 'Verification successful. You will be redirected to Login screen.';
@@ -146,33 +146,34 @@ export class RegistrationConfirmationComponent implements OnInit, OnDestroy {
                     let messageSMS = "Welcome To SAMBAR.";                    
                     let reg_plan = localStorage.getItem('reg_plan');
                     
-                    //add user to qldb
-                    // this.addUserToQldb({
-                    //   name : this.email,
-                    //   address: null,
-                    //   city: null,
-                    //   state: null,
-                    //   postal_code: null,
-                    //   country : null,
-                    //   avaliable_tokens : 0
-                    // }, reg_plan, message.token);
+              //       //add user to qldb
+              //       // this.addUserToQldb({
+              //       //   name : this.email,
+              //       //   address: null,
+              //       //   city: null,
+              //       //   state: null,
+              //       //   postal_code: null,
+              //       //   country : null,
+              //       //   avaliable_tokens : 0
+              //       // }, reg_plan, message.token);
 
-                    // enable MFA in cognito
-                    //this.enableMFA(this.email);
+              //       // enable MFA in cognito
+              //       //this.enableMFA(this.email);
                     
                     this.sendUserNotification(this.email, messageSMS , message.token);
-                    // localStorage.setItem('a_token' , message.token);
-                    // sessionStorage.setItem('username', this.email);         
-                    // localStorage.removeItem('confirm_pass');
+              //       // localStorage.setItem('a_token' , message.token);
+              //       // localStorage.setItem('username', this.email);         
+              //       // localStorage.removeItem('confirm_pass');
 
-                    // localStorage.setItem('a_token', message.IdToken);
-                    // sessionStorage.setItem('access_token', message.AccessToken);
-                    // sessionStorage.setItem('refresh_token', message.RefreshToken);                   
-                    // sessionStorage.setItem('user', JSON.stringify(message.user));
-                    // sessionStorage.setItem('td_login', 'true');
+              //       // localStorage.setItem('a_token', message.IdToken);
+              //       // localStorage.setItem('access_token', message.AccessToken);
+              //       // localStorage.setItem('refresh_token', message.RefreshToken);                   
+              //       // localStorage.setItem('user', JSON.stringify(message.user));
+              //       // localStorage.setItem('td_login', 'true');
 
                     setTimeout(() => {
-                      this.router.navigate(['/login']);
+                      //this.router.navigate(['/login']);
+                      window.location.href = '/ub02106/v1/login';
                     }, 1500)
 
               //     } else {

@@ -24,7 +24,7 @@ export class NotificationService {
     // headers.append('Content-Type', 'application/json');
     //headers.append('Authorization', 'Bearer ' + accessToken);
 
-    let options = new RequestOptions({ headers: headers });
+    //let options = new RequestOptions({ headers: headers });
 
         return this.http.post(url, 
           {
