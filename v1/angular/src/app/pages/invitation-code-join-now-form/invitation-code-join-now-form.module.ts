@@ -4,8 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 import { RecaptchaModule } from 'ng2-recaptcha';
 import { InternationalPhoneModule } from 'ng4-intl-phone';
-import {JoinNowComponent} from "./join-now.component";
-import { routing }       from './join-now.routing';
+import { InvitationCodeJoinNowFormComponent } from "./invitation-code-join-now-form.component";
+import { InvitationCodeJoinNowFormRouting }       from './invitation-code-join-now-form.routing';
 
 
 
@@ -17,14 +17,14 @@ import { routing }       from './join-now.routing';
     RecaptchaModule.forRoot(),
     FormsModule,
     NgaModule,
-    routing,
+    InvitationCodeJoinNowFormRouting,
     InternationalPhoneModule
   ],
   declarations: [
-    JoinNowComponent
+    InvitationCodeJoinNowFormComponent
   ]
 
 
 })
-export class JoinNowModule {}
+export class InvitationCodeJoinNowFormModule {}
 

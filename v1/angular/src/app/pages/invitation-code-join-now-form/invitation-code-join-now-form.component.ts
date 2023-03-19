@@ -1,30 +1,31 @@
 import {Component, OnInit, OnDestroy} from "@angular/core";
 import {Router, ActivatedRoute} from "@angular/router";
 import { InternationalPhoneModule } from 'ng4-intl-phone';
-import { RegisterService } from "../register/register-update.service";
+import { InvitationCodeJoinNowFormService } from "./invitation-code-join-now-form.service";
 import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from '../../theme/services';
-import 'style-loader!./join-now.scss';
+import 'style-loader!./invitation-code-join-now-form.component.scss';
 
 @Component({
-    selector: 'join-now',
-    templateUrl: './join-now.html',
+    selector: 'app-invitation-code-join-now-form',
+    templateUrl: './invitation-code-join-now-form.component.html',
     providers: [ 
-      RegisterService
+      InvitationCodeJoinNowFormService
   ]
 })
-export class JoinNowComponent  {
+export class InvitationCodeJoinNowFormComponent  {  
+    //ui0209_f12.p03
     email: string;
     errorMessage: string;
-    phoneno: string;
+    phoneNumber: string;
     successMessage: string;
     username: string;
-    first_name: string;
-    last_name: string;
+    firstName: string;
+    lastName: string;
     country: string = '';
     public showLoader:boolean;
     captcharesponse: string;
 
-    constructor(public router: Router,private _spinner: BaThemeSpinner, public regservice: RegisterService) {
+    constructor(public router: Router,private _spinner: BaThemeSpinner, public invitationcodejoinnowservice: InvitationCodeJoinNowFormService) {
         this.errorMessage = null;
         this.errorMessage = "* Required";
 
@@ -51,7 +52,8 @@ export class JoinNowComponent  {
 
     isLoggedIn(message: string, isLoggedIn: boolean) {
         if (isLoggedIn){
-            this.router.navigate(['/user/strategies-list']);
+            //this.router.navigate(['/user/strategies-list']);
+            window.location.href = '/ub02115/v1/user/strategies-list';
         }else{
             console.log('Here');
         }
@@ -62,7 +64,7 @@ export class JoinNowComponent  {
           this._spinner.show();
         });
         this.errorMessage = null;
-        if (this.email == null || this.phoneno == null || this.first_name == null || this.last_name == null || this.country == null ) {
+        if (this.email == null || this.phoneNumber == null || this.firstName == null || this.lastName == null || this.country == null ) {
 
             this.errorMessage = "* Required";
             BaThemePreloader.load().then((values) => {
@@ -82,7 +84,7 @@ export class JoinNowComponent  {
         } else {
 
 
-          this.regservice.joinUser({first_name: this.first_name,last_name: this.last_name, email: this.email, phone: this.phoneno, country: this.country})
+          this.invitationcodejoinnowservice.invitationCodeJoinNow({firstName: this.firstName,lastName: this.lastName, email: this.email, phoneNumber: this.phoneNumber, country: this.country})
           .subscribe((response: any) => {
 
             BaThemePreloader.load().then((values) => {
@@ -98,7 +100,9 @@ export class JoinNowComponent  {
                   this._spinner.show();
                 });
 
-                this.router.navigate(['/login/']);
+                //this.router.navigate(['/login/']);
+                window.location.href = '/ub02106/v1/login/';
+
                }, 3000);
 
             } else {
