@@ -5,7 +5,7 @@ import { NgaModule } from '../../theme/nga.module';
 import { RecaptchaModule } from 'ng2-recaptcha';
 import { InternationalPhoneModule } from 'ng4-intl-phone';
 import { InvitationCodeJoinNowFormComponent } from "./invitation-code-join-now-form.component";
-import { InvitationCodeJoinNowFormRouting }       from './invitation-code-join-now-form.routing';
+import { routing }       from './invitation-code-join-now-form.routing';
 
 
 
@@ -17,7 +17,7 @@ import { InvitationCodeJoinNowFormRouting }       from './invitation-code-join-n
     RecaptchaModule.forRoot(),
     FormsModule,
     NgaModule,
-    InvitationCodeJoinNowFormRouting,
+    routing,
     InternationalPhoneModule
   ],
   declarations: [
