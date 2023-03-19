@@ -17,7 +17,7 @@ export const routes: Routes = [
   },
   {
     path: 'join',
-    loadChildren: 'app/pages/join-now/join-now.module#JoinNowModule'
+    loadChildren: 'app/pages/invitation-code-join-now-form/invitation-code-join-now-form.module#JoinNowModule'
   },
   {
     path: 'register-cognito',
