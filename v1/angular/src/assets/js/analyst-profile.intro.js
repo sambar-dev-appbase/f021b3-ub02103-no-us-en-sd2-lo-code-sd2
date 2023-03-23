@@ -24,7 +24,7 @@ function startIntro(){
             position: 'bottom'
           },{
             element: ".email_txt",
-            intro: 'The analyst can email articles to contact@sambar.website.',
+            intro: 'The analyst can email articles to contact@sambar.one.',
             position: 'bottom'
           },{
             element: ".sub_btn",
