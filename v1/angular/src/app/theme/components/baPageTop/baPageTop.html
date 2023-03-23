@@ -294,7 +294,7 @@
               <a routerLink="/user/strategies-list" [queryParams]="{sector:'softs'}" class="btn_menu_button_parent" href="#"><button class="btn_menu_button_board">Softs Board</button></a>
             </ul>
           </li>
-          <li><a class="community_ui" target="_blank" href="http://community.sambar.one">Futures Community</a></li>
+          <li><a class="community_ui" target="_blank" href="http://community.sambar.website">Futures Community</a></li>
           <li>
             <a routerLink="/user/strategies-list" [queryParams]="{market: 'futures'}" class="parent_board_button_futures">Futures Board</a>
           </li>
@@ -361,7 +361,7 @@
                   <a routerLink="/user/strategies-list" [queryParams]="{commodity:'swiss-franc'}">Swiss Franc Board</a>
                 </li>
               </ul></li>
-              <li><a class="community_ui" target="_blank" href="http://community.sambar.one/index.php?/forum/9-currencies/">Currencies Forum</a></li>
+              <li><a class="community_ui" target="_blank" href="http://community.sambar.website/index.php?/forum/9-currencies/">Currencies Forum</a></li>
               <li>
                 <a routerLink="/user/strategies-list" [queryParams]="{sector: 'currencies'}" class="parent_board_button_forex">Currencies Board</a>
               </li>
@@ -392,7 +392,7 @@
           <!-- <button class="btn_menu_button" style="width:87%;" >ETNs 1-MINUTE DEMO</button> -->
         </ul> 
        </li>
-       <li><a class="community_ui" target="_blank" href="http://community.sambar.one/index.php?/forum/513-equities/">Equities Forum</a></li>
+       <li><a class="community_ui" target="_blank" href="http://community.sambar.website/index.php?/forum/513-equities/">Equities Forum</a></li>
        <li><a routerLink="/user/strategies-list/" [queryParams]="{market:'equities'}" class="parent_board_button_quities">Equities Board</a></li>
       <!-- <button class="btn_menu_button" (click)="openChildModalStocksVideo()">EQUITIES 1-MINUTE DEMO</button> -->
       
@@ -415,7 +415,7 @@
           <li><a routerLink="/opportunities/" [queryParams]="{sfid:'115'}">Books</a></li>
           <li><a routerLink="/opportunities/" [queryParams]="{sfid:'27,38,39,102,172'}">Magazines</a></li>
           <li><a routerLink="/opportunities/" [queryParams]="{sfid:'26,28,30,116'}">Newspapers</a></li>
-          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'32,118,119,120,173,174'}" >ones</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'32,118,119,120,173,174'}" >websites</a></li>
           <li><a routerLink="/opportunities/" [queryParams]="{sfid:'175,176,177,178,179,180'}">Market Newsletters</a></li>
           <li><a routerLink="/opportunities/" [queryParams]="{sfid:'181'}">Research Publications</a></li>
           <li><a routerLink="/opportunities/" [queryParams]="{sfid:'183'}">Whitepapers</a></li>
@@ -437,8 +437,8 @@
       <li><a class="trade_input" target="_blank" href="/trade-input">Trade Input</a></li>
       <li><a class="symbols_ui" target="_blank" href="/symbols">Symbols</a></li>
       <li><a  href="/html/v1/resources/events.html">Events</a></li>
-      <li><a  target="_blank" href="http://community.sambar.one/index.php?/forum/5-faqs/">FAQs</a></li>
-      <li><a  target="_blank" href="http://community.sambar.one">Community</a></li>
+      <li><a  target="_blank" href="http://community.sambar.website/index.php?/forum/5-faqs/">FAQs</a></li>
+      <li><a  target="_blank" href="http://community.sambar.website">Community</a></li>
       <li><a  href="/html/v1/resources/invest-with-us.html">Invest With Us</a></li>
       <!-- <button (click)="openChildModalResourcesVideo()" class="btn_menu_button">TRADES 1-MINUTE DEMO</button> -->
     </ul>
@@ -455,7 +455,7 @@
         </ul> 
        </li>
        <li><a routerLink="/myarticles/">My Articles</a></li>
-      <li><a *ngIf="!authormenu" routerLink="/user/strategies-list" [queryParams]="{filter:'none'}">Strategy Board <b class="fa fa-angle-down down_arrow_right_opp"></b></a>
+      <li><a *ngIf="!authormenu" routerLink="/user/strategies-list" [queryParams]="{filter:'nwebsite'}">Strategy Board <b class="fa fa-angle-down down_arrow_right_opp"></b></a>
         <ul style="margin-left:80px;">
           <li>
             <a routerLink="/user/strategies-list" [queryParams]="{market: 'futures'}">Futures Board</a>
@@ -527,7 +527,7 @@
     </ul>
   </div>
   <div class="extra-menu" *ngIf="authormenu">
-    <img class="author_image" src="{{userpicture}}" onerror="this.onerror=null;this.src='assets/img/no-photo.png'">
+    <img class="author_image" src="{{userpicture}}" websiterror="this.websiterror=null;this.src='assets/img/no-photo.png'">
   </div>
   <div class="extra-menu" *ngIf="dynamicmenu">
     <a href="/html/v1/subscription-plans.html" ><div class="credits_plan_user">Plans & Pricing <span tooltip="Check plans & pricing"  class="tooltip-parent for_plan_value"><i class="fa fa-info-circle"></i></span></div></a>
@@ -1076,7 +1076,7 @@
           <li><a routerLink="/opportunities/" [queryParams]="{sfid:'115'}">Books</a></li>
           <li><a routerLink="/opportunities/" [queryParams]="{sfid:'27,38,39,102,172'}">Magazines</a></li>
           <li><a routerLink="/opportunities/" [queryParams]="{sfid:'26,28,30,116'}">Newspapers</a></li>
-          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'32,118,119,120,173,174'}" >ones</a></li>
+          <li><a routerLink="/opportunities/" [queryParams]="{sfid:'32,118,119,120,173,174'}" >websites</a></li>
           <li><a routerLink="/opportunities/" [queryParams]="{sfid:'175,176,177,178,179,180'}">Market Newsletters</a></li>
           <li><a routerLink="/opportunities/" [queryParams]="{sfid:'181'}">Research Publications</a></li>
           <li><a routerLink="/opportunities/" [queryParams]="{sfid:'183'}">Whitepapers</a></li>
@@ -1112,7 +1112,7 @@
        </li>
       <li><a (click)="mouseEnterSub('strategy-board')" href="javascript:void(0)">Strategy Board <b class="fa fa-angle-down"></b></a>
         <ul class="sub-menu strategy-board-sub-menu-3">
-          <li><a routerLink="/user/strategies-list"  [queryParams]="{filter:'none'}">Strategy Board</a></li>
+          <li><a routerLink="/user/strategies-list"  [queryParams]="{filter:'nwebsite'}">Strategy Board</a></li>
           <li><a routerLink="/user/strategies-list/futures">Futures Board</a></li>
           <li><a routerLink="/user/strategies-list/forex">Currencies Board</a></li>
           <li><a routerLink="/user/strategies-list/stocks">Equities Board</a></li>
@@ -1154,7 +1154,7 @@
 
 <div bsModal #visualFeebackVideo="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm" id="modal_video">
-    <div class="modal-content" style="background:transparent;border:none;">
+    <div class="modal-content" style="background:transparent;border:nwebsite;">
       <div class="modal-body" style="padding:0px;">
          <button style="color:#fff;opacity:1;" class="close_video" aria-label="Close" (click)="closehidevisualFeebackVideo()">
           <span aria-hidden="true">&times;</span>
@@ -1211,7 +1211,7 @@
           <button class="button_input_feedback" [disabled]="!selectedemail || !selectedFeed" (click)="sendfeedback()">SEND</button>
         </div>
       </div>
-      <div class="wpcf7-response-output wpcf7-display-none wpcf7-mail-sent-ok" *ngIf="getSuccessMessage" style="display: block;" role="alert">Thank you for your message. It has been sent.</div>
+      <div class="wpcf7-response-output wpcf7-display-nwebsite wpcf7-mail-sent-ok" *ngIf="getSuccessMessage" style="display: block;" role="alert">Thank you for your message. It has been sent.</div>
     </div>
     </div>
     

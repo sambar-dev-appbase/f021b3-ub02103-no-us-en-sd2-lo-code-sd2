@@ -32,7 +32,7 @@ function startIntro(){
             position: 'bottom'
           },{
             element: ".email_txt",
-            intro: 'The user can email articles to submissions@sambar.one.',
+            intro: 'The user can email articles to submissions@sambar.website.',
             position: 'bottom'
           },{
             element: ".sub_btn",
@@ -176,7 +176,7 @@ document.getElementById("startProfileTour").addEventListener("click", function()
 
     // var divsToHide = document.getElementsByClassName("al-sidebar-sublist"); //divsToHide is an array
     // for(var i = 0; i < divsToHide.length; i++){
-    //     divsToHide[i].style.display = "none"; 
+    //     divsToHide[i].style.display = "nwebsite"; 
     // }
     // var divsToHide = document.getElementsByClassName("al-sidebar-list-item"); //divsToHide is an array
     // for(var i = 0; i < divsToHide.length; i++){
