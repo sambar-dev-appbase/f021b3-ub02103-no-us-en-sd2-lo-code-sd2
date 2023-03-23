@@ -24,7 +24,7 @@ function startIntro(){
             position: 'bottom'
           },{
             element: ".email_txt",
-            intro: 'The analyst can email articles to contact@sambar.website.',
+            intro: 'The analyst can email articles to contact@sambar.one.',
             position: 'bottom'
           },{
             element: ".sub_btn",
@@ -139,7 +139,7 @@ document.getElementById("startProfileTour").addEventListener("click", function()
 
     // var divsToHide = document.getElementsByClassName("al-sidebar-sublist"); //divsToHide is an array
     // for(var i = 0; i < divsToHide.length; i++){
-    //     divsToHide[i].style.display = "nwebsite"; 
+    //     divsToHide[i].style.display = "none"; 
     // }
     // var divsToHide = document.getElementsByClassName("al-sidebar-list-item"); //divsToHide is an array
     // for(var i = 0; i < divsToHide.length; i++){
