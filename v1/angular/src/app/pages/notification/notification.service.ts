@@ -15,7 +15,7 @@ export class NotificationService {
 
   registerNotification(username: string, message: string, accessToken: string) {
 
-    var url = registerNotificationApiUrl+'/usn0215-no-us-en-sd2-lo-api/v1/api/send-notification-0215.php';
+    var url = registerNotificationApiUrl+'/usn0215-no-us-en-sd2-lo-svc.f2b15-nsp-sd2.svc.cluster.local:32038/v1/api/send-notification-0215.php';
 
     let headers = new Headers({ 'Content-Type': 'application/json;' });
     let options = new RequestOptions({ headers: headers });

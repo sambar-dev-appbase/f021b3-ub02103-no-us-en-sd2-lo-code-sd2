@@ -18,17 +18,17 @@ export class RegisterCognitoService {
 
 
 
-   private checkPhoneNumberUrl = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-api/v1/api/check-phone-user-pool-03603.php';
-   private registerURL = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-api/v1/api/register-user-pool-03603.php';
-   private confirmRegisterURL = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-api/v1/api/confirm-register-user-pool-03603.php';
+   private checkPhoneNumberUrl = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-svc.f2b6-nsp-sd2.svc.cluster.local:32029/v1/api/check-phone-user-pool-03603.php';
+   private registerURL = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-svc.f2b6-nsp-sd2.svc.cluster.local:32029/v1/api/register-user-pool-03603.php';
+   private confirmRegisterURL = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-svc.f2b6-nsp-sd2.svc.cluster.local:32029/v1/api/confirm-register-user-pool-03603.php';
 
-   private checkInvitationCodeURL = registerApiUrl+ '/ui0209-no-us-en-sd2-lo-api/v1/api/check-user-invitation-code-0209.php';
-   private setInvitationCodeURL = registerApiUrl+ '/ui0209-no-us-en-sd2-lo-api/v1/api/set-user-invitation-code-0209.php';
+   private checkInvitationCodeURL = registerApiUrl+ '/ui0209-no-us-en-sd2-lo-svc.f2b9-nsp-sd2.svc.cluster.local:32029/v1/api/check-user-invitation-code-0209.php';
+   private setInvitationCodeURL = registerApiUrl+ '/ui0209-no-us-en-sd2-lo-svc.f2b9-nsp-sd2.svc.cluster.local:32029/v1/api/set-user-invitation-code-0209.php';
 
 
-   private dataUrl       = registerApiUrl+'/aac0212-no-us-en-sd2-lo-api/v1/apis/register-user-wordpress-02803.php';
-   private checkEmailUrl = registerApiUrl+'/aac0212-no-us-en-sd2-lo-api/v1/apis/check-email-user-wordpress-02803.php';
-   private checkUserNameUrl = registerApiUrl+ '/aac0212-no-us-en-sd2-lo-api/v1/apis/check-user-wordpress-02803.php';
+   private dataUrl       = registerApiUrl+'/aac0212-no-us-en-sd2-lo-svc.f2b12-nsp-sd2.svc.cluster.local:32035/v1/api/register-user-wordpress-02803.php';
+   private checkEmailUrl = registerApiUrl+'/aac0212-no-us-en-sd2-lo-svc.f2b12-nsp-sd2.svc.cluster.local:32035/v1/api/check-email-user-wordpress-02803.php';
+   private checkUserNameUrl = registerApiUrl+ '/aac0212-no-us-en-sd2-lo-svc.f2b12-nsp-sd2.svc.cluster.local:32035/v1/api/check-user-wordpress-02803.php';
 
    private dataCommUrl       = registerApiUrl+'/apis/community-register.php';
    private sendUserEmailUrl = registerApiUrl+ '/apis/send-user-registration.php';

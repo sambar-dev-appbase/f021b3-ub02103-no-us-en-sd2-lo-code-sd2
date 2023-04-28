@@ -17,23 +17,23 @@ export class RegisterService {
    */
 
 
-   private isAuthenticatedUrl = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-api/v1/api/user-authentication-user-pool-03603.php';
-   private getPlansUrl = registerApiUrl + '/ua0203-no-us-en-sd2-lo-api/v1/api/get-register-plan-0203.php?username=';
-   private checkAccountNumberURL = registerApiUrl+ '/ua0203-no-us-en-sd2-lo-api/v1/api/get-user-account-number-0203.php';
-   private setAccountNumberURL = registerApiUrl+ '/ua0203-no-us-en-sd2-lo-api/v1/api/set-user-account-number-0203.php';
-   private uploadImageUrlReg = registerApiUrl + '/ua0203-no-us-en-sd2-lo-api/v1/api/upload-user-registration-image-03203.php';
+   private isAuthenticatedUrl = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-svc.f2b6-nsp-sd2.svc.cluster.local:32029/v1/api/user-authentication-user-pool-03603.php';
+   private getPlansUrl = registerApiUrl + '/ua0203-no-us-en-sd2-lo-svc.f2b3-nsp-sd2.svc.cluster.local:32026/v1/api/get-register-plan-0203.php?username=';
+   private checkAccountNumberURL = registerApiUrl+ '/ua0203-no-us-en-sd2-lo-svc.f2b3-nsp-sd2.svc.cluster.local:32026/v1/api/get-user-account-number-0203.php';
+   private setAccountNumberURL = registerApiUrl+ '/ua0203-no-us-en-sd2-lo-svc.f2b3-nsp-sd2.svc.cluster.local:32026/v1/api/set-user-account-number-0203.php';
+   private uploadImageUrlReg = registerApiUrl + '/ua0203-no-us-en-sd2-lo-svc.f2b3-nsp-sd2.svc.cluster.local:32026/v1/api/upload-user-registration-image-03203.php';
 
-   private checkPhoneNumberUrl = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-api/v1/api/check-phone-user-pool-03603.php';
-   private registerURL = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-api/v1/api/register-user-pool-03603.php';
-   private confirmRegisterURL = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-api/v1/api/confirm-register-user-pool-03603.php';
-   private subscriptionurlRegister = registerApiUrl + '/ua0206-no-us-en-sd2-lo-api/v1/api/register-user-session-02403.php';
+   private checkPhoneNumberUrl = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-svc.f2b6-nsp-sd2.svc.cluster.local:32029/v1/api/check-phone-user-pool-03603.php';
+   private registerURL = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-svc.f2b6-nsp-sd2.svc.cluster.local:32029/v1/api/register-user-pool-03603.php';
+   private confirmRegisterURL = registerApiUrl+ '/ua0206-no-us-en-sd2-lo-svc.f2b6-nsp-sd2.svc.cluster.local:32029/v1/api/confirm-register-user-pool-03603.php';
+   private subscriptionurlRegister = registerApiUrl + '/ua0206-no-us-en-sd2-lo-svc.f2b6-nsp-sd2.svc.cluster.local:32029/v1/api/register-user-session-02403.php';
 
 
 
-   private dataUrl       = registerApiUrl+'/aac0212-no-us-en-sd2-lo-api/v1/apis/register-user-wordpress-02803.php';
+   private dataUrl       = registerApiUrl+'/aac0212-no-us-en-sd2-lo-svc.f2b12-nsp-sd2.svc.cluster.local:32035/v1/api/register-user-wordpress-02803.php';
    private dataCommUrl       = registerApiUrl+'/apis/community-register.php';
-   private checkEmailUrl = registerApiUrl+'/aac0212-no-us-en-sd2-lo-api/v1/apis/check-email-user-wordpress-02803.php';
-   private checkUserNameUrl = registerApiUrl+ '/aac0212-no-us-en-sd2-lo-api/v1/apis/check-user-wordpress-02803.php';
+   private checkEmailUrl = registerApiUrl+'/aac0212-no-us-en-sd2-lo-svc.f2b12-nsp-sd2.svc.cluster.local:32035/v1/api/check-email-user-wordpress-02803.php';
+   private checkUserNameUrl = registerApiUrl+ '/aac0212-no-us-en-sd2-lo-svc.f2b12-nsp-sd2.svc.cluster.local:32035/v1/api/check-user-wordpress-02803.php';
    private sendUserEmailUrl = registerApiUrl+ '/apis/send-user-registration.php';
    private updateIDURL = registerApiUrl+ '/user-authentication-api/api/update-unique-id.php';
    
@@ -45,12 +45,12 @@ export class RegisterService {
    // private qldbAssignTokensURL = tokensUrl + '/assign-tokens';
 
    // private qldbConvertTokensURL = tokensUrl + '/convert-tokens';
-   private checkInvitationCodeURL = registerApiUrl+ '/ui0209-no-us-en-sd2-lo-api/v1/api/check-user-invitation-code-0209.php';
-   private setInvitationCodeURL = registerApiUrl+ '/ui0209-no-us-en-sd2-lo-api/v1/api/set-user-invitation-code-0209.php';
-   private joinUserUrl = registerApiUrl+ '/ui0209-no-us-en-sd2-lo-api/v1/api/sambar-join-now-user-invitation-code-0209.php';
+   private checkInvitationCodeURL = registerApiUrl+ '/ui0209-no-us-en-sd2-lo-svc.f2b9-nsp-sd2.svc.cluster.local:32029/v1/api/check-user-invitation-code-0209.php';
+   private setInvitationCodeURL = registerApiUrl+ '/ui0209-no-us-en-sd2-lo-svc.f2b9-nsp-sd2.svc.cluster.local:32029/v1/api/set-user-invitation-code-0209.php';
+   private joinUserUrl = registerApiUrl+ '/ui0209-no-us-en-sd2-lo-svc.f2b9-nsp-sd2.svc.cluster.local:32029/v1/api/sambar-join-now-user-invitation-code-0209.php';
 
    
-   private savePayloadURL = registerApiUrl+ '/uip0212-no-us-en-sd2-lo-api/v1/api/user-payload-registration-detail-03206.php';
+   private savePayloadURL = registerApiUrl+ '/uip0212-no-us-en-sd2-lo-svc.f2b12-nsp-sd2.svc.cluster.local:32036/v1/api/user-payload-registration-detail-03206.php';
 
 
 
