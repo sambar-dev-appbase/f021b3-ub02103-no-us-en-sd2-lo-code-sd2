@@ -2,7 +2,7 @@
 
 
 export const strategyApiUrl 	   = "https://www.sambar.website";
-export const registerApiUrl 	   = "https:/";
+export const registerApiUrl 	   = "http:/";
 export const loginApiUrl 	       = "https://www.sambar.website";
 export const registerNotificationApiUrl  = "https://www.sambar.website/";
 export const userLoginApiUrl       = 'https://nv501sczlg.execute-api.eu-west-2.amazonaws.com/v1';
