@@ -32,7 +32,7 @@ function startIntro(){
             position: 'bottom'
           },{
             element: ".email_txt",
-            intro: 'The user can email articles to submissions@sambar.website.',
+            intro: 'The user can email articles to submissions@sambar.trading.',
             position: 'bottom'
           },{
             element: ".sub_btn",
